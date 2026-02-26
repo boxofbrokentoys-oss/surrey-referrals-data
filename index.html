@@ -4,163 +4,603 @@
   <meta charset='utf-8'/>
   <meta name='viewport' content='width=device-width, initial-scale=1'/>
   <title>Surrey Referral Pathways</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
   :root {
-    --bg:#F4F6F9; --surface:#FFFFFF; --surface-2:#F8F9FB; --border:#E2E6ED; --border-light:#EEF1F6;
-    --ink:#1A2335; --ink-2:#4A5568; --ink-3:#8896A8; --blue:#1B4FD8; --blue-light:#EBF0FD; --blue-mid:#C7D4F8;
-    --green:#047857; --amber:#B45309; --red:#BE123C; --shadow:0 4px 16px rgba(0,0,0,.08); --r:10px;
+    --bg: #F0F4F9;
+    --surface: #FFFFFF;
+    --surface-2: #F7F9FC;
+    --border: #DDE3EE;
+    --border-light: #EEF1F7;
+    --ink: #0F1E35;
+    --ink-2: #3D5068;
+    --ink-3: #7A8FA6;
+    --blue: #1345C5;
+    --blue-dark: #0D35A0;
+    --blue-light: #EBF0FD;
+    --blue-mid: #C0CEFA;
+    --green: #047857;
+    --green-light: #ECFDF5;
+    --amber: #B45309;
+    --red: #BE123C;
+    --red-light: #FFF1F4;
+    --shadow-sm: 0 1px 3px rgba(15,30,53,.07), 0 1px 2px rgba(15,30,53,.05);
+    --shadow: 0 4px 16px rgba(15,30,53,.09), 0 1px 4px rgba(15,30,53,.06);
+    --shadow-lg: 0 12px 40px rgba(15,30,53,.13), 0 4px 12px rgba(15,30,53,.07);
+    --r: 12px;
+    --r-sm: 8px;
+    --header-h: 60px;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); font-size:14px;}
-  .site-header{background:var(--blue);padding:0 16px;height:54px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10}
-  .site-logo{color:#fff;font-size:.9rem;font-weight:700;letter-spacing:.02em}
-  .tabs{margin-left:auto; display:flex; gap:6px}
-  .tab-btn{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:7px 14px;font-weight:700;cursor:pointer}
-  .tab-btn[aria-selected='true']{background:#fff;color:var(--blue)}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .wrap{max-width:1140px;margin:0 auto;padding:18px 16px 40px}
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 14px;
+    min-height: 100vh;
+  }
 
-  /* Grid home */
-  #home-view{padding:18px 0}
-  .systems-label{font-weight:700;margin-bottom:10px}
-  .category-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(210px, 1fr));gap:14px}
-  .category-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);cursor:pointer;display:flex;gap:10px;align-items:flex-start}
-  .category-card:hover{background:var(--blue-light);border-color:var(--blue-mid)}
-  .cat-emoji{font-size:22px}
-  .cat-title{font-weight:700}
-  .cat-sub{color:var(--ink-3);font-size:.82rem;margin-top:2px}
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--blue);
+    height: var(--header-h);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(15,30,53,.25);
+  }
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: .95rem;
+    letter-spacing: -.01em;
+  }
+  .logo-badge {
+    background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.9);
+  }
+  .tabs {
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+    background: rgba(0,0,0,.18);
+    padding: 4px;
+    border-radius: 10px;
+  }
+  .tab-btn {
+    background: transparent;
+    color: rgba(255,255,255,.75);
+    border: none;
+    border-radius: 7px;
+    padding: 7px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: .82rem;
+    cursor: pointer;
+    transition: all .18s ease;
+    white-space: nowrap;
+  }
+  .tab-btn[aria-selected='true'] {
+    background: #fff;
+    color: var(--blue);
+    box-shadow: var(--shadow-sm);
+  }
+  .tab-btn:hover:not([aria-selected='true']) { color: #fff; background: rgba(255,255,255,.12); }
 
-  /* Search + filters */
-  .search-section{margin-top:10px}
-  .search-box{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:6px 12px;margin-bottom:10px}
-  .search-icon{margin-right:6px}
-  #global-search, #usc-search{flex:1;border:none;outline:none;font-size:.95rem;background:transparent}
-  .chip-bar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
-  .chip{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-weight:700;cursor:pointer}
-  .chip.active, .chip:hover{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
-  .age-filter{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0 12px}
-  .age-chip-bar{display:flex;gap:8px}
-  .age-chip{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-weight:700;cursor:pointer;color:var(--ink-2)}
-  .age-chip.active, .age-chip:hover{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
-  #age-slider{width:220px}
+  /* ── VIEWS ── */
+  .view { display: none; }
+  .view.active { display: block; }
 
-  /* Panels */
-  .panel{display:none}
-  .panel.active{display:block}
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 28px 20px 60px; }
 
-  /* Subspecialty + conditions */
-  #subspec-list, #condition-list{display:none;margin:14px 0}
-  .list-title{font-weight:700;margin:8px 0}
-  .list{display:flex;flex-wrap:wrap;gap:8px}
+  /* ── HOME VIEW ── */
+  #home-view {}
 
-  /* Results */
-  #results-panel{display:none;margin-top:10px}
-  .results-header{display:flex;gap:10px;align-items:center;margin-bottom:10px}
-  .back{padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);cursor:pointer}
-  #results-sys-name{font-size:1.2rem;font-weight:800}
-  #results-count-pill{background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:14px;font-weight:700;margin-left:auto}
-  .provider-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:14px}
-  .provider-title{font-weight:800;margin-bottom:6px}
-  .service-card{border:1px solid var(--border-light);border-radius:var(--r);background:var(--surface-2);padding:10px;margin-bottom:10px}
-  .svc-title{font-weight:700}
-  .svc-sub{color:var(--ink-3);margin:4px 0}
-  .svc-badges{margin:6px 0}
+  .search-header {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .search-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    transition: border-color .15s;
+    margin-bottom: 14px;
+  }
+  .search-row:focus-within {
+    border-color: var(--blue);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(19,69,197,.1);
+  }
+  .search-icon { color: var(--ink-3); font-size: 1rem; flex-shrink: 0; }
+  #global-search, #usc-search {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: .95rem;
+    font-family: 'DM Sans', sans-serif;
+    background: transparent;
+    color: var(--ink);
+  }
+  #global-search::placeholder, #usc-search::placeholder { color: var(--ink-3); }
 
-  /* Search results */
-  #search-results, #usc-search-results{margin-top:6px}
-  .search-hit{padding:8px 10px;border-bottom:1px solid var(--border);cursor:pointer}
-  .search-hit:hover{background:var(--surface-2)}
+  .filter-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filter-label {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink-3);
+    white-space: nowrap;
+    margin-right: 2px;
+  }
+  .chip {
+    padding: 5px 13px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: .8rem;
+    cursor: pointer;
+    color: var(--ink-2);
+    transition: all .15s ease;
+    white-space: nowrap;
+  }
+  .chip:hover { border-color: var(--blue-mid); background: var(--blue-light); color: var(--blue); }
+  .chip.active { background: var(--blue); border-color: var(--blue); color: #fff; }
 
-  /* USC panel */
-  #panel-usc .systems-label{margin-top:10px}
+  .filter-divider { width: 1px; height: 20px; background: var(--border); margin: 0 4px; flex-shrink: 0; }
+
+  .age-slider-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+  #age-slider { width: 120px; accent-color: var(--blue); cursor: pointer; }
+  #age-slider-value { font-size: .78rem; font-weight: 700; color: var(--blue); min-width: 28px; }
+
+  /* ── CATEGORY GRID ── */
+  .section-label {
+    font-family: 'Sora', sans-serif;
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+  }
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 12px;
+  }
+  .category-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--r);
+    padding: 18px 16px;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all .18s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .category-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--cat-color, var(--blue));
+    opacity: 0;
+    transition: opacity .18s;
+  }
+  .category-card:hover {
+    border-color: var(--blue-mid);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+  }
+  .category-card:hover::before { opacity: 1; }
+  .cat-emoji {
+    font-size: 1.6rem;
+    line-height: 1;
+    display: block;
+  }
+  .cat-body {}
+  .cat-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: .88rem;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .cat-sub {
+    font-size: .75rem;
+    color: var(--ink-3);
+    font-weight: 500;
+  }
+
+  /* ── SEARCH RESULTS DROPDOWN ── */
+  #search-results, #usc-search-results {
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    background: var(--surface);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    margin-top: 6px;
+  }
+  #search-results:empty, #usc-search-results:empty { display: none; }
+  .search-hit {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: background .12s;
+  }
+  .search-hit:last-child { border-bottom: none; }
+  .search-hit:hover { background: var(--blue-light); }
+  .search-hit-title { font-weight: 600; font-size: .88rem; color: var(--ink); }
+  .search-hit-path { font-size: .75rem; color: var(--ink-3); }
+
+  /* ── INNER VIEWS (Category / Results) ── */
+  #category-view, #results-view { animation: fadeSlide .2s ease; }
+  @keyframes fadeSlide { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: none; } }
+
+  .view-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+  }
+  .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: var(--r-sm);
+    border: 1.5px solid var(--border);
+    background: var(--surface);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: .82rem;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: all .15s;
+    box-shadow: var(--shadow-sm);
+  }
+  .back-btn:hover { border-color: var(--blue-mid); color: var(--blue); background: var(--blue-light); }
+  .view-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .view-title .title-emoji { margin-right: 8px; }
+  .count-pill {
+    margin-left: auto;
+    background: var(--blue-light);
+    color: var(--blue);
+    border: 1px solid var(--blue-mid);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: .78rem;
+  }
+
+  /* ── SUBSPECIALTY LIST ── */
+  .subspec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .subspec-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 13px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .88rem;
+    color: var(--ink-2);
+    transition: all .15s;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .subspec-card:hover { border-color: var(--blue); color: var(--blue); background: var(--blue-light); box-shadow: var(--shadow); }
+  .subspec-card.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+  .subspec-arrow { opacity: .4; font-size: .8rem; }
+  .subspec-card:hover .subspec-arrow, .subspec-card.active .subspec-arrow { opacity: .8; }
+
+  /* Condition pills */
+  .conditions-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+
+  /* ── SERVICE CARDS ── */
+  .provider-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    margin-bottom: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .provider-header {
+    padding: 13px 18px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .provider-icon { font-size: 1rem; }
+  .provider-name {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: .9rem;
+    color: var(--ink);
+  }
+  .provider-count {
+    margin-left: auto;
+    font-size: .72rem;
+    font-weight: 700;
+    color: var(--ink-3);
+    background: var(--border-light);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .service-card {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border-light);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px 16px;
+    align-items: start;
+  }
+  .service-card:last-child { border-bottom: none; }
+  .svc-main {}
+  .svc-title {
+    font-family: 'Sora', sans-serif;
+    font-weight: 700;
+    font-size: .9rem;
+    color: var(--ink);
+    margin-bottom: 3px;
+    line-height: 1.35;
+  }
+  .svc-sub {
+    font-size: .78rem;
+    color: var(--ink-3);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+  .badge {
+    padding: 3px 9px;
+    border-radius: 6px;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .01em;
+  }
+  .badge-blue { background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-mid); }
+  .badge-red { background: var(--red-light); color: var(--red); border: 1px solid #fcc; }
+  .badge-green { background: var(--green-light); color: var(--green); border: 1px solid #a7f3d0; }
+  .svc-details { display: flex; flex-direction: column; gap: 4px; }
+  .svc-detail-row { font-size: .78rem; color: var(--ink-2); display: flex; gap: 6px; align-items: flex-start; }
+  .svc-detail-label { font-weight: 700; color: var(--ink-3); min-width: 44px; flex-shrink: 0; }
+  .svc-notes {
+    font-size: .78rem;
+    color: var(--ink-2);
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 6px;
+    padding: 7px 10px;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .svc-meta-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    padding-top: 2px;
+  }
+  .age-badge {
+    font-size: .7rem;
+    font-weight: 700;
+    color: var(--ink-3);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  /* ── USC PANEL ── */
+  #panel-usc .search-header { margin-bottom: 20px; }
+
+  /* ── EMPTY / LOADING ── */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--ink-3);
+  }
+  .empty-state .big { font-size: 2.5rem; margin-bottom: 10px; }
+  .empty-state p { font-size: .9rem; }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 60px;
+    color: var(--ink-3);
+    font-weight: 600;
+  }
+  .spinner {
+    width: 20px; height: 20px;
+    border: 2.5px solid var(--border);
+    border-top-color: var(--blue);
+    border-radius: 50%;
+    animation: spin .7s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .wrap { padding: 16px 12px 40px; }
+    .category-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .site-header { padding: 0 14px; }
+    .filter-row { gap: 6px; }
+    .age-slider-wrap { margin-left: 0; margin-top: 8px; }
+    .filter-row { flex-wrap: wrap; }
+  }
   </style>
 </head>
 <body>
+
   <header class='site-header'>
-    <div class='site-logo'>Surrey Referral Pathways</div>
+    <div class='site-logo'>
+      <div>Surrey Referral Pathways</div>
+      <div class='logo-badge'>ICB</div>
+    </div>
     <nav class='tabs' role='tablist'>
-      <button id='tab-ur' class='tab-btn' role='tab' aria-selected='true' aria-controls='panel-ur'>Routine & Urgent</button>
+      <button id='tab-ur' class='tab-btn' role='tab' aria-selected='true' aria-controls='panel-ur'>Routine &amp; Urgent</button>
       <button id='tab-usc' class='tab-btn' role='tab' aria-selected='false' aria-controls='panel-usc'>USC / 2WW</button>
     </nav>
   </header>
 
   <main class='wrap'>
-    <!-- HOME GRID: Category tiles -->
-    <section id='home-view'>
-      <div class='systems-label'>Browse by clinical area</div>
-      <div id='category-grid' class='category-grid'></div>
-    </section>
 
-    <!-- Routine & Urgent panel -->
-    <section id='panel-ur' class='panel active' aria-labelledby='tab-ur'>
-      <div class='search-section'>
-        <div class='search-box'>
-          <span class='search-icon'>🔍</span>
-          <input id='global-search' type='text' autocomplete='off' placeholder="Search service, specialty, condition, provider, or site…"/>
-        </div>
-        <div id='ur-region' class='chip-bar'>
-          <button class='chip active' data-area=''>All</button>
-          <button class='chip' data-area='NW Surrey'>NW Surrey</button>
-          <button class='chip' data-area='East Surrey'>East Surrey</button>
-          <button class='chip' data-area='Surrey Downs'>Surrey Downs</button>
-          <button class='chip' data-area='Guildford & Waverley'>Guildford & Waverley</button>
-          <button class='chip' data-area='East Elmbridge'>East Elmbridge</button>
-        </div>
-        <div class='age-filter'>
-          <div class='age-chip-bar'>
-            <button class='age-chip active' data-age='all'>All</button>
-            <button class='age-chip' data-age='adult'>Adult (18+)</button>
-            <button class='age-chip' data-age='paeds'>Paeds (0–17)</button>
+    <!-- ═══════════════════ ROUTINE & URGENT PANEL ═══════════════════ -->
+    <section id='panel-ur' class='view active' aria-labelledby='tab-ur'>
+
+      <!-- HOME VIEW: search + filters + grid -->
+      <div id='home-view' class='view active'>
+        <div class='search-header'>
+          <div class='search-row'>
+            <span class='search-icon'>🔍</span>
+            <input id='global-search' type='text' autocomplete='off' placeholder='Search service, specialty, condition, provider or site…'/>
           </div>
-          <div>
-            <input id='age-slider' type='range' min='0' max='120' value='0' step='1'/>
-            <span id='age-slider-value'>0+</span>
+          <div id='search-results'></div>
+          <div class='filter-row'>
+            <span class='filter-label'>Area</span>
+            <div id='ur-region' style='display:contents'>
+              <button class='chip active' data-area=''>All</button>
+              <button class='chip' data-area='NW Surrey'>NW Surrey</button>
+              <button class='chip' data-area='East Surrey'>East Surrey</button>
+              <button class='chip' data-area='Surrey Downs'>Surrey Downs</button>
+              <button class='chip' data-area='Guildford &amp; Waverley'>Guildford &amp; Waverley</button>
+              <button class='chip' data-area='East Elmbridge'>East Elmbridge</button>
+            </div>
+            <div class='filter-divider'></div>
+            <span class='filter-label'>Age</span>
+            <button class='age-chip chip active' data-age='all'>All</button>
+            <button class='age-chip chip' data-age='adult'>Adult</button>
+            <button class='age-chip chip' data-age='paeds'>Paeds</button>
+            <div class='age-slider-wrap'>
+              <input id='age-slider' type='range' min='0' max='120' value='0' step='1'/>
+              <span id='age-slider-value'>0+</span>
+            </div>
           </div>
         </div>
-        <div id='search-results'></div>
-      </div>
 
-      <div id='subspec-section'>
-        <div class='list-title'>Sub‑specialties</div>
-        <div id='subspec-list' class='list'></div>
-      </div>
-
-      <div id='condition-section'>
-        <div class='list-title'>Conditions</div>
-        <div id='condition-list' class='list'></div>
-      </div>
-
-      <div id='results-panel'>
-        <div class='results-header'>
-          <button class='back' data-role='back-to-home'>← All Areas</button>
-          <div id='results-sys-name'></div>
-          <div id='results-count-pill'></div>
+        <div class='section-label'>Browse by clinical area</div>
+        <div id='category-grid' class='category-grid'>
+          <div class='loading'><div class='spinner'></div> Loading services…</div>
         </div>
+      </div>
+
+      <!-- CATEGORY VIEW: subspecialties -->
+      <div id='category-view' class='view'>
+        <div class='view-header'>
+          <button class='back-btn' id='back-to-home'>← Back</button>
+          <div class='view-title' id='cat-view-title'></div>
+        </div>
+        <div class='section-label'>Sub-specialties</div>
+        <div id='subspec-grid' class='subspec-grid'></div>
+      </div>
+
+      <!-- RESULTS VIEW: service cards -->
+      <div id='results-view' class='view'>
+        <div class='view-header'>
+          <button class='back-btn' id='back-to-cat'>← Back</button>
+          <div class='view-title' id='results-title'></div>
+          <div class='count-pill' id='results-count'></div>
+        </div>
+        <div class='conditions-row' id='condition-list'></div>
         <div id='results-body'></div>
       </div>
+
     </section>
 
-    <!-- USC / 2WW panel -->
-    <section id='panel-usc' class='panel' aria-labelledby='tab-usc'>
-      <div class='search-section'>
-        <div class='search-box'>
+    <!-- ═══════════════════ USC / 2WW PANEL ═══════════════════ -->
+    <section id='panel-usc' class='view' aria-labelledby='tab-usc'>
+      <div class='search-header'>
+        <div class='search-row'>
           <span class='search-icon'>🔍</span>
-          <input id='usc-search' type='text' autocomplete='off' placeholder='Search USC cancer type, provider, or service…'/>
-        </div>
-        <div id='usc-region' class='chip-bar'>
-          <button class='chip active' data-area=''>All</button>
-          <button class='chip' data-area='NW Surrey'>NW Surrey</button>
-          <button class='chip' data-area='East Surrey'>East Surrey</button>
-          <button class='chip' data-area='Surrey Downs'>Surrey Downs</button>
-          <button class='chip' data-area='Guildford & Waverley'>Guildford & Waverley</button>
-          <button class='chip' data-area='East Elmbridge'>East Elmbridge</button>
+          <input id='usc-search' type='text' autocomplete='off' placeholder='Search USC cancer type, provider or service…'/>
         </div>
         <div id='usc-search-results'></div>
+        <div class='filter-row'>
+          <span class='filter-label'>Area</span>
+          <div id='usc-region' style='display:contents'>
+            <button class='chip active' data-area=''>All</button>
+            <button class='chip' data-area='NW Surrey'>NW Surrey</button>
+            <button class='chip' data-area='East Surrey'>East Surrey</button>
+            <button class='chip' data-area='Surrey Downs'>Surrey Downs</button>
+            <button class='chip' data-area='Guildford &amp; Waverley'>Guildford &amp; Waverley</button>
+            <button class='chip' data-area='East Elmbridge'>East Elmbridge</button>
+          </div>
+        </div>
       </div>
-      <div class='systems-label'>USC cancer types</div>
+
+      <div class='section-label' style='margin-top:4px'>USC cancer pathways</div>
       <div id='usc-grid' class='category-grid'></div>
-      <div id='usc-results' style='margin-top:14px'></div>
+      <div id='usc-results' style='margin-top:20px'></div>
     </section>
+
   </main>
 
   <script src='hybrid-loader.js'></script>
