@@ -102,11 +102,24 @@ function buildCategoryToSpecialties() {
 // ── Data loading ─────────────────────────────────────────────────────────────
 async function loadData() {
   if (DATA) return DATA;
-  const res = await fetch(DATA_URL);
-  if (!res.ok) { alert('Could not load data from GitHub.'); throw new Error('Fetch failed'); }
-  DATA = await res.json();
-  buildIndex(DATA);
-  return DATA;
+  try {
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    DATA = await res.json();
+    buildIndex(DATA);
+    return DATA;
+  } catch (err) {
+    const grid = by('#category-grid');
+    if (grid) grid.innerHTML = `
+      <div style='grid-column:1/-1;background:#fff;border:1px solid #DDE3EE;border-radius:12px;padding:32px 24px;text-align:center;color:#3D5068'>
+        <div style='font-size:2rem;margin-bottom:10px'>⚠️</div>
+        <div style='font-weight:700;margin-bottom:6px;font-size:.95rem'>Could not load referral data</div>
+        <div style='font-size:.82rem;color:#7A8FA6;margin-bottom:16px'>Check your internet connection and that the data source is reachable.</div>
+        <div style='font-size:.75rem;color:#aaa;font-family:monospace'>${err.message}</div>
+        <button onclick='location.reload()' style='margin-top:16px;padding:8px 20px;background:#1345C5;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.85rem'>Retry</button>
+      </div>`;
+    throw err;
+  }
 }
 
 function buildIndex(data) {
@@ -487,7 +500,11 @@ window.addEventListener('DOMContentLoaded', async () => {
   // show home-view initially
   showView('home-view');
 
-  await loadData();
+  try {
+    await loadData();
+  } catch {
+    return; // error already shown in grid
+  }
   renderCategoryTiles();
   wireFilters();
   wireSearch();
