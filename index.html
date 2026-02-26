@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'/>
+  <meta name='viewport' content='width=device-width, initial-scale=1'/>
+  <title>Surrey Referral Pathways</title>
+  <style>
+  :root {
+    --bg:#F4F6F9; --surface:#FFFFFF; --surface-2:#F8F9FB; --border:#E2E6ED; --border-light:#EEF1F6;
+    --ink:#1A2335; --ink-2:#4A5568; --ink-3:#8896A8; --blue:#1B4FD8; --blue-light:#EBF0FD; --blue-mid:#C7D4F8;
+    --green:#047857; --amber:#B45309; --red:#BE123C; --shadow:0 4px 16px rgba(0,0,0,.08); --r:10px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family: 'DM Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--ink); font-size:14px;}
+  .site-header{background:var(--blue);padding:0 16px;height:54px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:10}
+  .site-logo{color:#fff;font-size:.9rem;font-weight:700;letter-spacing:.02em}
+  .tabs{margin-left:auto; display:flex; gap:6px}
+  .tab-btn{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:7px 14px;font-weight:700;cursor:pointer}
+  .tab-btn[aria-selected='true']{background:#fff;color:var(--blue)}
+
+  .wrap{max-width:1140px;margin:0 auto;padding:18px 16px 40px}
+
+  /* Grid home */
+  #home-view{padding:18px 0}
+  .systems-label{font-weight:700;margin-bottom:10px}
+  .category-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(210px, 1fr));gap:14px}
+  .category-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:16px;box-shadow:var(--shadow);cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+  .category-card:hover{background:var(--blue-light);border-color:var(--blue-mid)}
+  .cat-emoji{font-size:22px}
+  .cat-title{font-weight:700}
+  .cat-sub{color:var(--ink-3);font-size:.82rem;margin-top:2px}
+
+  /* Search + filters */
+  .search-section{margin-top:10px}
+  .search-box{display:flex;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:6px 12px;margin-bottom:10px}
+  .search-icon{margin-right:6px}
+  #global-search, #usc-search{flex:1;border:none;outline:none;font-size:.95rem;background:transparent}
+  .chip-bar{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+  .chip{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-weight:700;cursor:pointer}
+  .chip.active, .chip:hover{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
+  .age-filter{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0 12px}
+  .age-chip-bar{display:flex;gap:8px}
+  .age-chip{padding:6px 12px;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-weight:700;cursor:pointer;color:var(--ink-2)}
+  .age-chip.active, .age-chip:hover{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
+  #age-slider{width:220px}
+
+  /* Panels */
+  .panel{display:none}
+  .panel.active{display:block}
+
+  /* Subspecialty + conditions */
+  #subspec-list, #condition-list{display:none;margin:14px 0}
+  .list-title{font-weight:700;margin:8px 0}
+  .list{display:flex;flex-wrap:wrap;gap:8px}
+
+  /* Results */
+  #results-panel{display:none;margin-top:10px}
+  .results-header{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+  .back{padding:6px 10px;border-radius:8px;border:1px solid var(--border);background:var(--surface);cursor:pointer}
+  #results-sys-name{font-size:1.2rem;font-weight:800}
+  #results-count-pill{background:var(--blue-light);color:var(--blue);padding:4px 10px;border-radius:14px;font-weight:700;margin-left:auto}
+  .provider-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin-bottom:14px}
+  .provider-title{font-weight:800;margin-bottom:6px}
+  .service-card{border:1px solid var(--border-light);border-radius:var(--r);background:var(--surface-2);padding:10px;margin-bottom:10px}
+  .svc-title{font-weight:700}
+  .svc-sub{color:var(--ink-3);margin:4px 0}
+  .svc-badges{margin:6px 0}
+
+  /* Search results */
+  #search-results, #usc-search-results{margin-top:6px}
+  .search-hit{padding:8px 10px;border-bottom:1px solid var(--border);cursor:pointer}
+  .search-hit:hover{background:var(--surface-2)}
+
+  /* USC panel */
+  #panel-usc .systems-label{margin-top:10px}
+  </style>
+</head>
+<body>
+  <header class='site-header'>
+    <div class='site-logo'>Surrey Referral Pathways</div>
+    <nav class='tabs' role='tablist'>
+      <button id='tab-ur' class='tab-btn' role='tab' aria-selected='true' aria-controls='panel-ur'>Routine & Urgent</button>
+      <button id='tab-usc' class='tab-btn' role='tab' aria-selected='false' aria-controls='panel-usc'>USC / 2WW</button>
+    </nav>
+  </header>
+
+  <main class='wrap'>
+    <!-- HOME GRID: Category tiles -->
+    <section id='home-view'>
+      <div class='systems-label'>Browse by clinical area</div>
+      <div id='category-grid' class='category-grid'></div>
+    </section>
+
+    <!-- Routine & Urgent panel -->
+    <section id='panel-ur' class='panel active' aria-labelledby='tab-ur'>
+      <div class='search-section'>
+        <div class='search-box'>
+          <span class='search-icon'>🔍</span>
+          <input id='global-search' type='text' autocomplete='off' placeholder="Search service, specialty, condition, provider, or site…"/>
+        </div>
+        <div id='ur-region' class='chip-bar'>
+          <button class='chip active' data-area=''>All</button>
+          <button class='chip' data-area='NW Surrey'>NW Surrey</button>
+          <button class='chip' data-area='East Surrey'>East Surrey</button>
+          <button class='chip' data-area='Surrey Downs'>Surrey Downs</button>
+          <button class='chip' data-area='Guildford & Waverley'>Guildford & Waverley</button>
+          <button class='chip' data-area='East Elmbridge'>East Elmbridge</button>
+        </div>
+        <div class='age-filter'>
+          <div class='age-chip-bar'>
+            <button class='age-chip active' data-age='all'>All</button>
+            <button class='age-chip' data-age='adult'>Adult (18+)</button>
+            <button class='age-chip' data-age='paeds'>Paeds (0–17)</button>
+          </div>
+          <div>
+            <input id='age-slider' type='range' min='0' max='120' value='0' step='1'/>
+            <span id='age-slider-value'>0+</span>
+          </div>
+        </div>
+        <div id='search-results'></div>
+      </div>
+
+      <div id='subspec-section'>
+        <div class='list-title'>Sub‑specialties</div>
+        <div id='subspec-list' class='list'></div>
+      </div>
+
+      <div id='condition-section'>
+        <div class='list-title'>Conditions</div>
+        <div id='condition-list' class='list'></div>
+      </div>
+
+      <div id='results-panel'>
+        <div class='results-header'>
+          <button class='back' data-role='back-to-home'>← All Areas</button>
+          <div id='results-sys-name'></div>
+          <div id='results-count-pill'></div>
+        </div>
+        <div id='results-body'></div>
+      </div>
+    </section>
+
+    <!-- USC / 2WW panel -->
+    <section id='panel-usc' class='panel' aria-labelledby='tab-usc'>
+      <div class='search-section'>
+        <div class='search-box'>
+          <span class='search-icon'>🔍</span>
+          <input id='usc-search' type='text' autocomplete='off' placeholder='Search USC cancer type, provider, or service…'/>
+        </div>
+        <div id='usc-region' class='chip-bar'>
+          <button class='chip active' data-area=''>All</button>
+          <button class='chip' data-area='NW Surrey'>NW Surrey</button>
+          <button class='chip' data-area='East Surrey'>East Surrey</button>
+          <button class='chip' data-area='Surrey Downs'>Surrey Downs</button>
+          <button class='chip' data-area='Guildford & Waverley'>Guildford & Waverley</button>
+          <button class='chip' data-area='East Elmbridge'>East Elmbridge</button>
+        </div>
+        <div id='usc-search-results'></div>
+      </div>
+      <div class='systems-label'>USC cancer types</div>
+      <div id='usc-grid' class='category-grid'></div>
+      <div id='usc-results' style='margin-top:14px'></div>
+    </section>
+  </main>
+
+  <script src='hybrid-loader.js'></script>
+</body>
+</html>
