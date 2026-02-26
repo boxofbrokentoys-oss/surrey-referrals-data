@@ -1,0 +1,25 @@
+{
+  "specialty": "Autonomic Service",
+  "conditions": {
+    "Autonomic Service": [
+      {
+        "provider": "University College London Hospital (UCLH)",
+        "serviceName": "Autonomic Service (RAS) - Neurology - NHNN - UCLH",
+        "sites": [
+          "UCLH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "uclh.appointments@nhs.net",
+        "phone": "0203 448 4508",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

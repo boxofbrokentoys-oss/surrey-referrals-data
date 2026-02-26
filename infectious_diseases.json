@@ -1,0 +1,43 @@
+{
+  "specialty": "Infectious Diseases",
+  "conditions": {
+    "Infectious Diseases": [
+      {
+        "provider": "STGH",
+        "serviceName": "Covid Medical Deliveries Unit Assess Service (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 12,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "12+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Infectious Diseases (CIU) Assessment Service",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "specialty": "Obstetrics",
+  "conditions": {
+    "Obstetrics": [
+      {
+        "provider": "CUH",
+        "serviceName": "Diabetic Pregnancy",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Obstetrics - Endocrine Pregnancy",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "mailto:cpicb.referrals-specsavers@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Obstetrics inc. high risk & multiple pregnancies",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Antenatal & Midwife - Pre Assessment Service - Triage",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "Est-tr.antenatal-egh@nhs.net",
+        "phone": "01372 735 367",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Antenatal & Midwife - Pre Assessment Service -Triage",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Antenatal & Midwife-Pre Assessment Service-Appointment EWELL",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "Est-tr.antenatal-egh@nhs.net",
+        "phone": "01372 735 367",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Antenatal & Midwife-Pre Assessment Service-Appointment OOA",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "Est-tr.antenatal-egh@nhs.net",
+        "phone": "01372 735 367",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Antenatal Midwife - Pre Assessment Service - OPA- (Citrine)",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "Est-tr.antenatal-egh@nhs.net",
+        "phone": "01372 735 367",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Antenatal Midwife - Pre Assessment Service - OPA- (Ruby)",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "Est-tr.antenatal-egh@nhs.net",
+        "phone": "01372 735 367",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

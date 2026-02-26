@@ -1,0 +1,80 @@
+{
+  "specialty": "EMG/Nerve Conduction",
+  "conditions": {
+    "EMG/Nerve Conduction": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.wscn@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Neurophysiology - Nerve Conduction & EMG",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Neurophysiology- Carpal Tunnel",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Tinnitus/Hearing Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

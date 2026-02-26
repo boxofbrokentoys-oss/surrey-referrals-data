@@ -1,0 +1,234 @@
+{
+  "specialty": "Nephrology",
+  "conditions": {
+    "Nephrology": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Ashford Hospital Nephrology Assessment Service / Nephrology",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Renal Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "General Nephrology",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Nephrology- Acute Kidney Injury",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Renal Hypertension Clinic",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Hypertension - Nephrology",
+        "sites": [
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.renalpod@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Nephrology",
+        "sites": [
+          "Epsom",
+          "St Helier",
+          "Leatherhead",
+          "St Peter's",
+          "Guildford",
+          "Aldershot",
+          "East Surrey",
+          "Fleet",
+          "Frimley Park",
+          "King Edward VII"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.renalpod@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paed Renal Nephrology",
+        "sites": [
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Nephrology",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 17,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "17+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Renal/urology",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Nephrology",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 17,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "17+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Renal - Assessment Service (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

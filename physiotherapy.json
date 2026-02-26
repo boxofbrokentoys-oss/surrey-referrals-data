@@ -1,0 +1,208 @@
+{
+  "specialty": "Physiotherapy",
+  "conditions": {
+    "Physiotherapy": [
+      {
+        "provider": "ASPH",
+        "serviceName": "RAS Triage Service for Direct Access Pelvic Physiotherapy",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "RAS Triage Service for Paediatric Physiotherapy",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "RAS Triage Service for non-iMSK Physiotherapy",
+        "sites": [
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "RAS Triage service for Hand Therapy",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Physiotherapy - Hand Therapy",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Physiotherapy - Female Health - Pelvic Floor Class",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "G&W: RSCH no longer accepts acupuncture as a standalone referral. Acupuncture may still be offered as part of a broader physiotherapy treatment plan.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Physiotherapy - Lower Limb",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": 99,
+        "sex": "any",
+        "criteria": "16–99",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "G&W: RSCH no longer accepts acupuncture as a standalone referral. Acupuncture may still be offered as part of a broader physiotherapy treatment plan.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Physiotherapy - Neurological - Physiotherapy",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "G&W: RSCH no longer accepts acupuncture as a standalone referral. Acupuncture may still be offered as part of a broader physiotherapy treatment plan.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Physiotherapy - Paediatric - Physiotherapy",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 17",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "G&W: RSCH no longer accepts acupuncture as a standalone referral. Acupuncture may still be offered as part of a broader physiotherapy treatment plan.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Physiotherapy - Respiratory",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "G&W: RSCH no longer accepts acupuncture as a standalone referral. Acupuncture may still be offered as part of a broader physiotherapy treatment plan.",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Women's & Men's Pelvic Health Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "specialty": "Sleep Medicine",
+  "conditions": {
+    "CPAP": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.respiratoryadmin@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "Had sleep apnoea results and currently has a CPAP machine",
+        "usc": false
+      }
+    ],
+    "Sleep Medicine": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Sleep Study Referral Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "St George's and SASH sleep clinics found on e-RS under Respiratory / Not Otherwise Specified.\nASPH: sleep apnoea only. New diagnosis — via e-RS. CPAP (already diagnosed) — email asp-tr.respiratoryadmin@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Sleep TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "St George's and SASH sleep clinics found on e-RS under Respiratory / Not Otherwise Specified.",
+        "usc": false
+      },
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Sleep complex TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "St George's and SASH sleep clinics found on e-RS under Respiratory / Not Otherwise Specified.",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Sleep Study - Sleep & Ventilation",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "St George's and SASH sleep clinics found on e-RS under Respiratory / Not Otherwise Specified.",
+        "usc": false
+      },
+      {
+        "provider": "GSST",
+        "serviceName": "SEL Obstructive Sleep Apnoea (OSA) RAS - Sleep Medicine - Guy's & St Thomas'",
+        "sites": [
+          "Guy's & St Thomas'"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "gst-tr.gstters@nhs.net",
+        "phone": "0207 188 0826",
+        "notes": "St George's and SASH sleep clinics found on e-RS under Respiratory / Not Otherwise Specified.",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Sleep Disorders Triage Assessment Service *NOT FOR PATIENT ATTENDANCE* -Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Sleep Medicine - Insomnia - OutpatientsFoundation Trust",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "St George's and SASH sleep clinics found on e-RS under Respiratory / Not Otherwise Specified.\nRSCH sees insomnia and nightmares — offers CBTi remotely. No medications available from this clinic.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Sleep Medicine - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "St George's and SASH sleep clinics found on e-RS under Respiratory / Not Otherwise Specified.\nRSCH sees insomnia and nightmares — offers CBTi remotely. No medications available from this clinic.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Sleep Medicine - Outpatients - Cranleigh Village Hospital",
+        "sites": [
+          "Cranleigh"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,699 @@
+{
+  "specialty": "Gynaecology",
+  "conditions": {
+    "Colposcopy": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Colposcopy Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Colposcopy Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Gynaecology (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Fertility": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Fertility Service / Virtual Fertility Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "18+, Female only",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "ES: Local fertility clinics at Epsom & St Helier or Croydon.",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Gynaecology Fertility Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "ES: Local fertility clinics at Epsom & St Helier or Croydon.",
+        "usc": false
+      }
+    ],
+    "Gynaecology": [
+      {
+        "provider": "ASPH",
+        "serviceName": "General Gynaecology Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult (Consultant Led) Urogynaecology Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult General Gynaecology",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": 110,
+        "sex": "female",
+        "criteria": "16–110, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Gynaecology (Female Consultant)",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Colposcopy (Female Consultant) Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "18+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Endometriosis -Gynaecology",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Female Bladder Dysfunction Continence Assessment Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Fertility Video Consultation Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Recurrent Miscarriage Clinic",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": 110,
+        "sex": "female",
+        "criteria": "16–110, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Vulva Disorders",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "DHC",
+        "serviceName": "Gynaecology",
+        "sites": [
+          "Dorking",
+          "Epsom Cottage",
+          "Holmhurst"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "DHC",
+        "serviceName": "Gynaecology – Menopause",
+        "sites": [
+          "Dorking",
+          "Holmhurst",
+          "Epsom Cottage",
+          "Oxted"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Abnormal Uterine Bleeding & Fibroids",
+        "sites": [
+          "St Helier",
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Colposcopy",
+        "sites": [
+          "St Helier",
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Endometriosis, Pelvic Pain & General Gynae",
+        "sites": [
+          "St Helier",
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Female Fertility",
+        "sites": [
+          "St Helier",
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": 45,
+        "sex": "female",
+        "criteria": "16–45, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Gynaecology Sunflower Community Clinic",
+        "sites": [
+          "Epsom",
+          "St Helier",
+          "Gynaecology Sunflower Community Clinic"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Menopause & Endocrine Disorders",
+        "sites": [
+          "St Helier",
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Ovarian Mass",
+        "sites": [
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatrics",
+        "sites": [
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Pessary Clinic - Urogynaecology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Preconception Counselling",
+        "sites": [
+          "St Helier",
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": 45,
+        "sex": "female",
+        "criteria": "16–45, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Recurrent Miscarriage",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": 45,
+        "sex": "female",
+        "criteria": "16–45, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Urogynaecology",
+        "sites": [
+          "St Helier",
+          "Leatherhead"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "16+, Female only",
+        "email": "esth.gynaecology-sth@nhs.net",
+        "phone": "0208 296 2954",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Gynaecology",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Advice and Guidance only - Gynae Dept",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 17,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "17+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Gynaecology (Paediatric) ONLY 12-17 yrs",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 12,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "12–17",
+        "email": "sash.obsandgynae.secretaries@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Colposcopy Assess Service (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Gynaecology: Assessment Service",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Urogynaecology": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Urogynaecology Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "18+, Female only",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "North Downs does not offer urogynaecology — refer elsewhere.",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Urogynaecology Service-Gynaecology",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 12,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "12+, Female only",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Nuffield Health, Woking",
+        "serviceName": "Adult NHS Uro-Gynaecology Clinic",
+        "sites": [
+          "Nuffield Health (Woking)"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "18+, Female only",
+        "email": "nuffieldhealth.ereferrals@nhs.net",
+        "phone": "0800 015 5020",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

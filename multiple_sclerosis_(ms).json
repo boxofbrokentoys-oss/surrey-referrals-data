@@ -1,0 +1,26 @@
+{
+  "specialty": "Multiple Sclerosis (MS)",
+  "conditions": {
+    "Multiple Sclerosis (MS)": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.msspecialistnurseservice@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Known to ASPH",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

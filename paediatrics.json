@@ -1,0 +1,1245 @@
+{
+  "specialty": "Paediatrics",
+  "conditions": {
+    "Paediatric Developmental": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Cardiology (Echo)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Cardiology(Over5s)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 5,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "5-17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Cardiology(Under 5)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 5,
+        "sex": "any",
+        "criteria": "0-5",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Diabetes",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Endocrinology",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Gastroenterology",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Seizures (Complex)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric TB Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Community Paediatrics",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "For dizziness/balance: book under Audiology at ESTH rather than ENT.",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paed General Medicine",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paed Renal Nephrology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paed Rheumatology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Allergy",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Audiology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Complex Cardiology",
+        "sites": [
+          "Epsom"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Dermatology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Diabetes",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric ENT",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Endocrinology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Epilepsy",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Fast Track",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Gastroenterology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric General Surgery",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Haematology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 18,
+        "sex": "any",
+        "criteria": "0–18",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Orthopaedics",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Respiratory (Epsom / St Helier - QMH)",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric Urology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "Paediatrics-sth@nhs.net",
+        "phone": "0208 296 3031",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Paediatric Epilepsy Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Paediatric General Medicine Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "One Stop",
+        "serviceName": "https://surreychildandfamily.co.uk/services/referrals/ / Email - scfh.contact@hcrgcaregroup.com",
+        "sites": [
+          "One Stop"
+        ],
+        "method": "Portal",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Developmental, behavioral, enuresis, ASD/ADHD (under 5)",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "Patients can use Right to Choose: Psychiatry UK for ADHD/Autism assessment (first episode of care only).",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Cardiology/Heart Murmur - Paeds - RA2",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Diabetes - Children's Unit",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Endocrinology - Children's Unit",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 18,
+        "sex": "any",
+        "criteria": "0-18",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Epilepsy",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0-15",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Gastroenterology - RSCH",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Paediatric Urgent Referrals Clinic",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Dentistry & Orthodontics (Paediatrics)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "sash.paedsecsmed@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Dermatology (Paediatrics)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "sash.paedsecsmed@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Paediatric (All Specialties)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "sash.paedsecsmed@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Paediatric Ophthalmology",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "sash.paedsecsmed@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "cdcreferrals@stgeorges.nhs.uk",
+        "sites": [
+          "STGH"
+        ],
+        "method": "Email",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "internal.referrals@stgeorges.nhs.uk",
+        "phone": "0208 725 0007",
+        "notes": "Patients can use Right to Choose: Psychiatry UK for ADHD/Autism assessment (first episode of care only).",
+        "usc": false
+      }
+    ],
+    "Paediatric Dietetics": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Dietetic Referral Assessment Service-Ashford & St. Peter's NHS Foundation Trust",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 19,
+        "sex": "any",
+        "criteria": "0-19",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "Paediatric weight management (2–16yrs): Complications of Excess Weight (CEW) service at ASPH — for obesity-related conditions (raised BP, metabolic liver disease, IIH, OSA, PCOS, impaired fasting glucose).",
+        "usc": false
+      },
+      {
+        "provider": "Be your Best",
+        "serviceName": "beyourbest@surreycc.gov.uk",
+        "sites": [
+          "Be your Best"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 19",
+        "email": "BeYourBest@surreycc.gov.uk",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Nutrition and Dietetics - Paediatric",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 19,
+        "sex": "any",
+        "criteria": "0-19",
+        "email": "fhft.fph.dietetic-referrals@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Paediatric": [
+      {
+        "provider": "CUH",
+        "serviceName": "Children's Surgery & Urology Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Gynaecology Service Under 16 years",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "female",
+        "criteria": "0-16, Female only",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Paediatric Chest/Tuberculosis-Thoracic Medicine",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Paediatric Diabetes",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Paediatric Infectious Diseases",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Paediatric Orthopaedics Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FCHC",
+        "serviceName": "Paediatric - General",
+        "sites": [
+          "FCHC"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 16 weeks",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "ES: Under 16 weeks — we email referral directly. Over 16 weeks — refer via e-RS to hospital.",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Children's Vision Clinic (Paediatric) - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "General Ophthalmology (Paediatric) - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Paediatric Ophthalmology-Moorfields at St George's",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Oral & Maxillofacial Surgery-Maxillofacial Unit-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 1,
+        "ageMax": 99,
+        "sex": "any",
+        "criteria": "1–99",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Paediatric Hand Surgery-Plastic Surgery-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0–17",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SDHC",
+        "serviceName": "Paediatric One-Stop Clinic",
+        "sites": [
+          "SDHC"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "Surrey Downs",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Over 6 months or not breastfeeding",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "SD: One Stop does not see over 6 months, lip-tied, or non-breastfeeding patients — refer to ENT or Maxillofacial instead.",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "General Medicine Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 18",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paed Surgery-Chest Wall/Pectus Deformity Assess (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 18",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paed Urology- Adolescent Joint Gynaecology Assess (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "Under 18, Female only",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paediatric Allergy Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 18,
+        "sex": "any",
+        "criteria": "0–18",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paediatric Assessment Service (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paediatric Cardiology Assessment (Brompton Consultants)",
+        "sites": [
+          "Royal Brompton Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0–16",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paediatric Ophthalmology (St Thomas' Consultant)",
+        "sites": [
+          "St Thomas'"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 16",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paediatric Respiratory Medicine Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 18",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Paediatric Surgery -Children's General Surgery & Non-Complex Urology",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 18,
+        "sex": "any",
+        "criteria": "0–18",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

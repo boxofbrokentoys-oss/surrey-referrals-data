@@ -1,0 +1,25 @@
+{
+  "specialty": "Rapid Response (including falls Team)",
+  "conditions": {
+    "Rapid Response (including falls Team)": [
+      {
+        "provider": "CSH SPA",
+        "serviceName": "csh.nwsucr@nhs.net",
+        "sites": [
+          "CSH SPA"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "csh.spareferrals@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

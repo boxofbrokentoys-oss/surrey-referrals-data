@@ -1,0 +1,44 @@
+{
+  "specialty": "Diabetic - Young Adult",
+  "conditions": {
+    "Diabetic - Young Adult": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Young Adult Diabetic Service - RTK / Virtual Young Adult Diabetic Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 19,
+        "ageMax": 25,
+        "sex": "any",
+        "criteria": "19–25",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Diabetic Medicine - Young Adult Clinic - Cedar Centre",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": 40,
+        "sex": "any",
+        "criteria": "16–40",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "specialty": "Diabetic Nutrition",
+  "conditions": {
+    "Diabetic Nutrition": [
+      {
+        "provider": "KH",
+        "serviceName": "Diabetes Specialist Dietitian Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

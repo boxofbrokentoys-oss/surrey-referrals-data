@@ -1,0 +1,44 @@
+{
+  "specialty": "TIA",
+  "conditions": {
+    "TIA": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asph.strokereferrals@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "sash.tiaclinicreferrals@nhs.net",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "sash.tiaclinicreferrals@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "ES: Email TIA referrals to SASH.",
+        "usc": false
+      }
+    ]
+  }
+}

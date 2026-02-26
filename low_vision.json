@@ -1,0 +1,25 @@
+{
+  "specialty": "Low Vision",
+  "conditions": {
+    "Low Vision": [
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Routine Low Vision RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

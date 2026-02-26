@@ -1,0 +1,61 @@
+{
+  "specialty": "Genetics",
+  "conditions": {
+    "Genetics": [
+      {
+        "provider": "GSST",
+        "serviceName": "General Genetic Referral Assessment Service - Guy's & St Thomas’ Hospital",
+        "sites": [
+          "Guy's & St Thomas'"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "gst-tr.gstters@nhs.net",
+        "phone": "0207 188 0826",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RMH",
+        "serviceName": "RMH London & Sutton Cancer Genetics Referral Assessment Service",
+        "sites": [
+          "RMH (London / Sutton)"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rmh-tr.referrals@nhs.net",
+        "phone": "0800 731 2325",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Clinical Genetics -Family History Service (Breast, Ovary, Bowel Cancers)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "genetic.appts@stgeorges.nhs.uk",
+        "phone": "0208 725 3343",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

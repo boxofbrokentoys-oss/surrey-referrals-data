@@ -1,0 +1,80 @@
+{
+  "specialty": "Bariatric",
+  "conditions": {
+    "Bariatric": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Tier 3 Medical Weight Management & Bariatric Surgery Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Surgery Bariatric and Obesity Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Mary's Hospital",
+        "serviceName": "Specialist Weight Management Programme TRIAGE",
+        "sites": [
+          "St Mary's Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Richard's Hospital (Western Sussex)",
+        "serviceName": "uhsussex.bariatric.office@nhs.net",
+        "sites": [
+          "St Richard's Hospital (Western Sussex)"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "All",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "uhsussex.bariatric.office@nhs.net",
+        "phone": "nan",
+        "notes": "Surgical referrals only.",
+        "usc": false
+      }
+    ]
+  }
+}

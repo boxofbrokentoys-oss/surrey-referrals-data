@@ -1,0 +1,79 @@
+{
+  "specialty": "Hernias",
+  "conditions": {
+    "Hernias": [
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Surgery Hernia Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Nuffield Health, Guildford",
+        "serviceName": "Adult NHS Hernia Clinic",
+        "sites": [
+          "Nuffield Health (Guildford)"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nuffieldhealth.ereferrals@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Nuffield Health, Woking",
+        "serviceName": "Adult NHS Hernia Clinic",
+        "sites": [
+          "Nuffield Health (Woking)"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nuffieldhealth.ereferrals@nhs.net",
+        "phone": "0800 015 5020",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Runnymede",
+        "serviceName": "Adult NHS Hernia Repair Clinic",
+        "sites": [
+          "Runnymede"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "circlehealthgroup@nhs.net",
+        "phone": "01932 800580",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

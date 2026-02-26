@@ -1,0 +1,26 @@
+{
+  "specialty": "Stable chest/angina",
+  "conditions": {
+    "Stable chest/angina": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Stable Chest Pain Referral Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "Ensure ECG/ bloods done. Can email ECG to email address on form",
+        "usc": false
+      }
+    ]
+  }
+}

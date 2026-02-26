@@ -1,0 +1,25 @@
+{
+  "specialty": "H&N, Thyroid/Parathyroid/Salivary",
+  "conditions": {
+    "H&N, Thyroid/Parathyroid/Salivary": [
+      {
+        "provider": "RSCH",
+        "serviceName": "H&N/Thyroid/Parathyroid/Salivary/voice - ENT Dept",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

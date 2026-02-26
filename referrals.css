@@ -1,0 +1,27 @@
+/* Surrey Referral Pathways – Design System */
+:root { --nhs-blue:#005eb8; --nhs-light-blue:#0072ce; --border:#d9d9d9; --radius:8px; --shadow:0 2px 4px rgba(0,0,0,.08); }
+body { font-family: Segoe UI, Roboto, Arial, sans-serif; margin:0; background:#f5f5f5; color:#1d1d1d; }
+.site-header{background:var(--nhs-blue);color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.tabs{display:inline-flex;gap:8px}
+.tab-btn{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:6px;padding:8px 12px;cursor:pointer}
+.tab-btn[aria-selected="true"]{background:#fff;color:var(--nhs-blue);border-color:#fff;font-weight:700}
+.page-wrap{max-width:1140px;margin:0 auto;padding:16px 16px 36px}
+.panel{display:none}.panel.active{display:block}
+.split{display:grid;grid-template-columns:1fr;gap:20px}@media(min-width:960px){.split{grid-template-columns:360px 1fr}}
+.section-title{padding:8px 20px;font-size:18px;font-weight:700}
+#specialty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;padding:20px}
+.specialty-tile{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
+.specialty-tile:hover{background:var(--nhs-light-blue);color:#fff}
+#condition-list{padding:20px;display:none;position:sticky;top:10px;align-self:start}
+.condition-button{display:block;width:100%;text-align:left;padding:12px 16px;margin-bottom:8px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer}
+.condition-button:hover{background:var(--nhs-light-blue);color:#fff;border-color:var(--nhs-light-blue)}
+#service-panel{padding:20px;display:none}
+.provider-block{background:#fff;border:2px solid var(--nhs-blue);padding:18px;margin-bottom:24px;border-radius:var(--radius)}
+.provider-title{font-size:20px;color:var(--nhs-blue);margin:0 0 12px}
+.service-card{border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;margin-bottom:12px;background:#fafafa;box-shadow:var(--shadow)}
+.badge{display:inline-block;padding:4px 8px;margin-right:6px;border-radius:12px;font-size:12px;color:#fff;font-weight:700}
+.badge.Email{background:#0066cc}.badge.RAS{background:#ff8a00}.badge.CAS{background:#7b2cbf}.badge.Bookable{background:#1f8f55}.badge.usc{background:#cc0000}
+#region-filter,#age-filter{margin:0 20px 10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#region-filter button,#age-filter button{padding:8px 12px;border-radius:var(--radius);border:1px solid var(--border);background:#fff;cursor:pointer}
+#region-filter button:hover,#age-filter button:hover{background:var(--nhs-light-blue);color:#fff}
+#age-slider{width:220px}

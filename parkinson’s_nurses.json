@@ -1,0 +1,26 @@
+{
+  "specialty": "Parkinson’s Nurses",
+  "conditions": {
+    "Parkinson’s Nurses": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.parkinsons@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Patient need to be known to ASPH",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

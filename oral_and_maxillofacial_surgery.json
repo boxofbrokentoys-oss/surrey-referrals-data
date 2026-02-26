@@ -1,0 +1,188 @@
+{
+  "specialty": "Oral and Maxillofacial Surgery",
+  "conditions": {
+    "Oral and Maxillofacial Surgery": [
+      {
+        "provider": "CUH",
+        "serviceName": "Oral Surgery",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Oral surgery TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Oral & Maxillofacial Surgery / Oral & Maxillofacial Surgery",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "GSST",
+        "serviceName": "General Oral Medicine RAS - Guy's & St Thomas'",
+        "sites": [
+          "Guy's & St Thomas'"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "gst-tr.gstters@nhs.net",
+        "phone": "0207 188 0826",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "GSST",
+        "serviceName": "Oral Surgery RAS- Oral and Maxillofacial Surgery-Guy's & St Thomas'",
+        "sites": [
+          "Guy's & St Thomas'"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "gst-tr.gstters@nhs.net",
+        "phone": "0207 188 0826",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Oral and Maxillofacial Surgery Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Oral & Maxillofacial Surgery-Maxillofacial Dept Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 1,
+        "ageMax": 105,
+        "sex": "any",
+        "criteria": "1–105",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Oral & Maxillofacial Surgery - Maxillo-Facial Dept",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Oral & Maxillo-Facial Surgery - Complex",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "Maxfax.DentalEnquiries@stgeorges.nhs.uk",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Oral & Maxillo-Facial Surgery - Simple",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "Maxfax.DentalEnquiries@stgeorges.nhs.uk",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

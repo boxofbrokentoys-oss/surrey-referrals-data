@@ -1,0 +1,1168 @@
+{
+  "specialty": "Gastroenterology / GI & Liver",
+  "conditions": {
+    "Endoscopy": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Diagnostic Endoscopy RAS Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Diagnostic Endoscopy RAS Service - RTK",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Charing Cross",
+        "serviceName": "GP Direct Access straight to test Pathway TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Gastroenterology (upper GI)",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Endoscopy - General",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Gastroenterology Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "rsch.endoscopy@nhs.net",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Diagnostic Endoscopy RAS",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Gastroentorology": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Gastroenterology Referral Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Gastroenterology NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Colorectal Surgery (Consultant Led)",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Gallstone Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Gastroenterology",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Lower GI and Disturbed Bowel",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "mailto:cpicb.referrals-specsavers@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Upper GI- General Surgery",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Viral Hepatitis B and C",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Adult general medical TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Gastroenterology (upper GI)",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Hammersmith Hospital",
+        "serviceName": "Adult general medical TRIAGE",
+        "sites": [
+          "Hammersmith Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Gastroenterology Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "General - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Pelvic Floor Clinic",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Referral Assessment ONLY",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "TEL Colorectal Surgery ( St George's University Hospitals)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Mary's Hospital",
+        "serviceName": "Adult general medical TRIAGE",
+        "sites": [
+          "St Mary's Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "RAS Gastroenterology West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Hepatology / Hepatobiliary": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Head and Neck Lump Clinic-ENT Dept",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Hepatology Assessment Service (MEDICAL)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "General",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Hammersmith Hospital",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "Hammersmith Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Hammersmith Hospital",
+        "serviceName": "HPB_Surgery|Hepatobiliary and pancreatic surgery TRIAGE|Hammersmith|Imperial NHS Trust",
+        "sites": [
+          "Hammersmith Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Liver Clinic - General - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Gastroenterology (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Mary's Hospital",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "St Mary's Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "RAS Gastroenterology Hepatology West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Upper GI Surgery": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Tier 3 Medical Weight Management & Bariatric Surgery Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Upper GI SURGERY - RTK / Upper GI SURGERY - RTK /Virtual Upper GI SURGERY",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Virtual Upper GI SURGERY - RTK",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Gallstones, Gallbladder and Upper GI Surgery NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Upper GI Surgery NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Upper GI Surgery Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Mount Alvernia",
+        "serviceName": "Adult NHS Cholecystectomy Clinic - Mount Alvernia Hospital",
+        "sites": [
+          "Mount Alvernia"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "mahreferrals@bmihealthcare.co.uk",
+        "phone": "01483 442 692",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Upper GI - Oesophagogastric - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "GI and Liver (Medicine and Surgery)": [
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Colonoscopy NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Colorectal NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Gallstones NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Gallstones, Gallbladder and Upper GI Surgery NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Gastroenterology NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "Fibroscans available at Trust hospitals only — not community providers.",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Upper GI Surgery NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "DHC",
+        "serviceName": "GI and Liver (Medicine and Surgery) – Colorectal Surgery",
+        "sites": [
+          "Dorking",
+          "Epsom Cottage",
+          "Elizabeth House"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "DHC",
+        "serviceName": "GI and Liver (Medicine and Surgery) – Gastroenterology",
+        "sites": [
+          "Dorking",
+          "Epsom Cottage"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Colorectal",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.ugi-sth@nhs.net",
+        "phone": "0208 296 2340",
+        "notes": "ESTH direct access endoscopy: use direct access form and email to esth.endoref@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Gall Stones-Upper GI Surgery",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.ugi-sth@nhs.net",
+        "phone": "0208 296 2340",
+        "notes": "ESTH direct access endoscopy: use direct access form and email to esth.endoref@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Gastroenterology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.ugi-sth@nhs.net",
+        "phone": "0208 296 2340",
+        "notes": "ESTH direct access endoscopy: use direct access form and email to esth.endoref@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Upper GI",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.ugi-sth@nhs.net",
+        "phone": "0208 296 2340",
+        "notes": "ESTH direct access endoscopy: use direct access form and email to esth.endoref@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Colorectal",
+        "sites": [
+          "EDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": 99,
+        "sex": "any",
+        "criteria": "18–99",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588414",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Gastroenterology",
+        "sites": [
+          "EDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": 99,
+        "sex": "any",
+        "criteria": "18–99",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588414",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Gastroenterology (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.gastroadmin@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Upper & Lower GI Surgery (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.gastroadmin@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Inflammatory Bowel Disease": [
+      {
+        "provider": "RSCH",
+        "serviceName": "General - Outpatients - Haslemere Hospital",
+        "sites": [
+          "Haslemere"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "RAS Gastroenterology Inflammatory Bowel Disease West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Diagnostic Endoscopy": [
+      {
+        "provider": "SASH",
+        "serviceName": "Diagnostic Endoscopy RAS",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.endosbookings@nhs.net",
+        "phone": "01737 284649",
+        "notes": "ES: Open access endoscopy at SASH — use open access form and send via Diagnostic Endoscopy on e-RS.\nDirect access rectal bleeding clinic: send via e-RS to SASH triage (Upper & Lower GI Surgery).",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Endoscopy - Diagnostic Endoscopy Assessment Service",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "specialty": "Diabetic Eye Screening",
+  "conditions": {
+    "Diabetic Eye Screening": [
+      {
+        "provider": "Surrey",
+        "serviceName": "inl.enquiries.surreydesp@nhs.net",
+        "sites": [
+          "Surrey"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

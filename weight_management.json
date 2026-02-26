@@ -1,0 +1,43 @@
+{
+  "specialty": "Weight Management",
+  "conditions": {
+    "Weight Management": [
+      {
+        "provider": "Digital Weight Management Programme",
+        "serviceName": "NHS Digital Weight Management Programme - NHS England Version 2",
+        "sites": [
+          "Digital Weight Management Programme"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "mlcsu.digitalweightmanagementprogramme@nhs.net",
+        "phone": "01772 660011",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Surrey Exercise and Weight Management Referral Scheme",
+        "serviceName": "hello@oneyousurrey.org.uk",
+        "sites": [
+          "Surrey Exercise and Weight Management Referral Scheme"
+        ],
+        "method": "nan",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "hello@oneyousurrey.org.uk",
+        "phone": "01737 652168",
+        "notes": "Form needs to be given to the patient to take to the exercise specialist",
+        "usc": false
+      }
+    ]
+  }
+}

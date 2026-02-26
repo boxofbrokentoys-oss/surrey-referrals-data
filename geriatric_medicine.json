@@ -1,0 +1,265 @@
+{
+  "specialty": "Geriatric Medicine",
+  "conditions": {
+    "Geriatric": [
+      {
+        "provider": "CUH",
+        "serviceName": "Elderly Care-Falls Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 62,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "62+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "General Assessment of Medical Conditions (over 65) @ Howell Assessment Unit",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Parkinsons / Movement Disorders @ Howell Assessment Unit",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 40,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "40+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Geriatric Medicine/Falls",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "Cote-sth@nhs.net",
+        "phone": "0208 296 2947",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Parkinson's/Movement Disorders",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "Cote-sth@nhs.net",
+        "phone": "0208 296 2947",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Care of the Elderly Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Geriatric Medicine Clinic Triage -Rehabilitation Unit-Queen Victoria Hosp",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "All",
+        "ageMin": 70,
+        "ageMax": 199,
+        "sex": "any",
+        "criteria": "70–199",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Parkinsons Clinic-Rehabilitation Unit-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": 199,
+        "sex": "any",
+        "criteria": "18–199",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Geriatric Medicine - General - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Geriatric Medicine - Parkinson and frailty - Outpatients - Milford Hospital",
+        "sites": [
+          "Milford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Geriatric Medicine",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 75,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "75+",
+        "email": "sash.coesecretary@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Geriatrics: Assessment Service",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Mary's Hospital",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "St Mary's Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Geriatric Medicine": [
+      {
+        "provider": "DHC",
+        "serviceName": "Geriatric Medicine – Care of the Elderly",
+        "sites": [
+          "Dorking",
+          "Epsom Cottage",
+          "Elizabeth House"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

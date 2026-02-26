@@ -1,0 +1,331 @@
+{
+  "specialty": "Plastics",
+  "conditions": {
+    "Plastics": [
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Plastic Surgery Burns Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Plastic Surgery Carpal Tunnel Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Plastic Surgery General Chelsea and Westminster Hospital RQM01 (not hand and wrist)",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Plastic Surgery",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Plastic Surgery Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Adult Hand Surgery-Plastic Surgery-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": 199,
+        "sex": "any",
+        "criteria": "16–199",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Breast Surgery-Plastic Surgery-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Burn scar reconstruction service (NOT FOR ACUTE BURN CARE)-Plastic Surgery Dept Queen Victoria",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Facial Palsy MDT",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "All",
+        "ageMin": 1,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "1+",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Lower Limb Reconstruction-Plastic Surgery-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Plastic Surgery - General",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Complex Reconstruction Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "General Assessment Service (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "internal.referrals@stgeorges.nhs.uk",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Hand & Wrist Assessment Service",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "internal.referrals@stgeorges.nhs.uk",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Skin Cancer Assessment, Not for patient attendance",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Mary's Hospital",
+        "serviceName": "Paediatric plastic surgery TRIAGE",
+        "sites": [
+          "St Mary's Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "RAS Plastic Surgery West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

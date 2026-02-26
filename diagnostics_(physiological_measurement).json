@@ -1,0 +1,214 @@
+{
+  "specialty": "Diagnostics (Physiological Measurement)",
+  "conditions": {
+    "Audiology": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Audiology-Over 18s RAS",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "Patients who have had previous audiology appointments at ASPH in the last 4 years do NOT need a new referral. Practices/patients can contact the appointment centre directly to book via 01784 884351. No domiciliary appointments - send to RSCH instead. Patients with ear wax - please de-wax first (either in primary care or in de-wax clinics).",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Adult Audiology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "audiology-sth@nhs.net",
+        "phone": "0208 296 3490",
+        "notes": "Patients with ear wax - please de-wax first (either in primary care or via a de-wax clinic)",
+        "usc": false
+      },
+      {
+        "provider": "FCHC",
+        "serviceName": "fchc.audiology@nhs.net",
+        "sites": [
+          "FCHC"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fchc.audiology@nhs.net",
+        "phone": "nan",
+        "notes": "All adults emailed to FCHC in the first instance.  Once seen by this team, can send to KH or SASH for hearing aids / ENT. Domiciliary/home team referrals also processed through FCHC.\nES: Email adult referrals to FCHC in the first instance (fchc.audiology@nhs.net). Once assessed, can refer on to KH or SASH for hearing aids / ENT.\nDomiciliary/home visit audiology also available via FCHC.",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Existing Hearing Aid User Reassessment Service-Queen Mary's Hospital Site",
+        "sites": [
+          "QMH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "ADULT General",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": 120,
+        "sex": "any",
+        "criteria": "18–120",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "PAEDIATRIC General",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0–15",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Specsavers",
+        "serviceName": "ADULT AUDIOLOGY ASSESS AND FIT – SPECSAVERS",
+        "sites": [
+          "Specsavers (Epsom / Leatherhead / Banstead)"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "G&W",
+        "ageMin": 19,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "19+",
+        "email": "cpicb.referrals-specsavers@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Echocardiogram": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Diagnostics Physiological Measurement - Cardiac Physiology - Echocardiogram",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Direct Access Echocardiogram (Echo)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "rsch.hasteechoreferrals@nhs.net",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "nan",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Diagnostic Physiological Measurement": [
+      {
+        "provider": "ESTH",
+        "serviceName": "Adult Audiology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "audiology-sth@nhs.net",
+        "phone": "0208 296 3490",
+        "notes": "ES: Nerve conduction studies — refer under MSK to Oxted Therapy for triage.",
+        "usc": false
+      }
+    ]
+  }
+}

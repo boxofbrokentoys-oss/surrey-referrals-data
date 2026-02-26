@@ -1,0 +1,67 @@
+{
+  "specialty": "BCG",
+  "conditions": {
+    "BCG": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.gpappointments@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "All",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "BCG not available at RSCH or SASH — refer to ASPH by email.",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.tbandbcg@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 1,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "1+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH, FPH and Epsom",
+        "serviceName": "asp-tr.tbandbcg@nhs.net / fhft.FrimleyMaternityimms@nhs.net /(or babies over 28 days old or born in a London hospital) to esth.refertopublichealthmidwife@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's",
+          "Frimley",
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "under 1 to hospital of birth",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

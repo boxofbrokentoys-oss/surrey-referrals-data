@@ -1,0 +1,4171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NHS Surrey Referral Pathways</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+<style>
+  :root { --bg:#F4F6F9; --surface:#FFFFFF; --surface-2:#F8F9FB; --border:#E2E6ED; --border-light:#EEF1F6; --ink:#1A2335; --ink-2:#4A5568; --ink-3:#8896A8; --blue:#1B4FD8; --blue-light:#EBF0FD; --blue-mid:#C7D4F8; --teal:#0891B2; --teal-light:#E0F5FA; --green:#047857; --green-light:#D1FAE5; --amber:#B45309; --amber-light:#FEF3C7; --red:#BE123C; --red-light:#FFE4E6; --purple:#6D28D9; --purple-light:#EDE9FE; --shadow-xs:0 1px 2px rgba(0,0,0,0.05); --shadow-sm:0 2px 6px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04); --shadow:0 4px 16px rgba(0,0,0,0.08); --r:10px; --r-sm:6px; --r-lg:14px; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.5;min-height:100vh}
+  .page-wrap{max-width:1140px;margin:0 auto;padding:24px 20px 60px}
+  .main-panel{display:none}
+  .main-panel.active{display:block}
+  .site-header{background:var(--blue);padding:0 24px;display:flex;align-items:center;gap:16px;height:52px;position:sticky;top:0;z-index:100}
+  .site-logo{font-size:0.78rem;font-weight:700;color:white;letter-spacing:.05em;text-transform:uppercase;opacity:.95}
+  .site-logo span{opacity:.55;font-weight:400;margin-left:8px}
+  .header-tabs{display:flex;gap:2px;margin-left:auto}
+  .htab{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-family:inherit;font-size:.82rem;font-weight:600;padding:7px 18px;border-radius:20px;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:7px;letter-spacing:.01em}
+  .htab:hover{background:rgba(255,255,255,.15);color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.25)}
+  .htab.active{background:white;color:var(--blue);border-color:white;box-shadow:0 2px 8px rgba(0,0,0,.2);font-weight:700}
+  header.tab-usc{background:#6B21A8}
+  header.tab-ur{background:var(--blue)}
+  header.tab-usc .htab.active{color:#6B21A8}
+  .search-section{margin-bottom:28px}
+  .search-box{position:relative}
+  .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-3);font-size:16px;pointer-events:none;line-height:1}
+  #global-search,#usc-search{width:100%;padding:13px 16px 13px 42px;font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--surface);border:2px solid var(--border);border-radius:var(--r);outline:none;transition:border-color .15s,box-shadow .15s;box-shadow:var(--shadow-sm)}
+  .search-hint{font-size:.72rem;color:var(--ink-3);margin-top:8px}
+  #search-results,#usc-search-results{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);margin-top:6px;display:none;max-height:420px;overflow-y:auto}
+  .sr-group-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-3);padding:10px 14px 5px;border-top:1px solid var(--border-light)}
+  .sr-item{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;transition:background .1s;border:none;background:none;width:100%;text-align:left;font-family:inherit}
+  .sr-item:hover{background:var(--blue-light)}
+  .sr-item.kb-focus{background:var(--blue-light);outline:none}
+  .sr-icon{font-size:16px;flex-shrink:0;width:24px;text-align:center}
+  .sr-main{flex:1}
+  .sr-topic{font-size:.87rem;font-weight:600;color:var(--ink);line-height:1.2}
+  .sr-meta{font-size:.72rem;color:var(--ink-3);margin-top:1px}
+  .sr-tag{font-size:.68rem;font-weight:600;background:var(--blue-light);color:var(--blue);border-radius:4px;padding:2px 6px;flex-shrink:0}
+  .area-filter{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .area-filter-label{font-size:.75rem;font-weight:600;color:var(--ink-3);white-space:nowrap}
+  .area-chip{font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--ink-2);cursor:pointer;transition:all .15s;white-space:nowrap}
+  .area-chip.active{background:var(--blue);border-color:var(--blue);color:white}
+  .systems-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);margin-bottom:12px}
+  .systems-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px}
+  .sys-btn{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:14px 12px;cursor:pointer;text-align:left;transition:all .15s;font-family:inherit;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow-xs)}
+  .sys-btn:hover{border-color:var(--blue);background:var(--blue-light);transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+  .sys-btn.active{border-color:var(--blue);background:var(--blue);color:white}
+  .sys-icon{font-size:20px;line-height:1}
+  .sys-name{font-size:.82rem;font-weight:600;color:var(--ink);line-height:1.3}
+  .sys-count{font-size:.66rem;font-weight:700;background:var(--blue-light);color:var(--blue);border-radius:10px;padding:1px 7px;width:fit-content}
+  .results-header-bar{display:flex;align-items:center;gap:12px;margin:28px 0 16px;padding-bottom:14px;border-bottom:2px solid var(--border)}
+  .results-back{background:none;border:1.5px solid var(--border);border-radius:var(--r-sm);padding:6px 12px;font-family:inherit;font-size:.8rem;font-weight:500;color:var(--ink-2);cursor:pointer;transition:all .15s}
+  .results-sys-name{font-size:1.05rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+  .results-sub{font-size:.75rem;color:var(--ink-3);margin-top:2px}
+  .results-count-pill{font-size:.75rem;font-weight:600;background:var(--blue-light);color:var(--blue);border-radius:12px;padding:3px 10px}
+  .specialty-filter{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:14px;padding:10px 12px;background:var(--surface-2);border:1px solid var(--border-light);border-radius:var(--r-sm)}
+  .spec-chip{font-size:.72rem;font-weight:600;padding:4px 10px 4px 12px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--ink-2);cursor:pointer;transition:all .13s;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+  .spec-chip.active{background:var(--teal);border-color:var(--teal);color:white}
+  .chip-count{font-size:.6rem;font-weight:700;min-width:16px;height:16px;background:var(--border);color:var(--ink-3);border-radius:8px;padding:0 4px;display:inline-flex;align-items:center;justify-content:center;transition:all .13s}
+  .provider-group{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);margin-bottom:10px;box-shadow:var(--shadow-xs);overflow:hidden}
+  .provider-group-header{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;transition:background .1s;user-select:none}
+  .pg-toggle{font-size:12px;color:var(--ink-3);background:none;border:none;cursor:pointer;padding:0 4px;transition:transform .2s;flex-shrink:0}
+  .pg-toggle.open{transform:rotate(180deg)}
+  .service-row{border-bottom:1px solid var(--border-light)}
+  .service-row-header{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;transition:background .1s;border-top:1px solid var(--border-light)}
+  .srv-toggle{font-size:10px;color:var(--ink-3);background:none;border:none;cursor:pointer;transition:transform .2s}
+  .srv-toggle.open{transform:rotate(180deg)}
+  .service-body{display:none;background:var(--surface-2);border-top:1px solid var(--border-light);padding:14px 16px}
+  .service-body.open{display:block}
+  .ref-table{width:100%;border-collapse:collapse;margin-bottom:12px}
+  .ref-table tr{border-bottom:1px solid var(--border-light)}
+  .ref-table td{padding:6px 0;vertical-align:top}
+  .ref-label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);width:130px;padding-right:12px;white-space:nowrap}
+  .ref-val{font-size:.85rem;color:var(--ink)}
+  .note-flags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .badge{font-size:.65rem;font-weight:700;border-radius:4px;padding:2px 6px;white-space:nowrap}
+  .comm-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;padding:4px 2px}
+  .comm-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow-xs);display:flex;flex-direction:column;gap:10px}
+  .usc-topic-header{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:8px}
+  
+.pg-provider{font-size:.92rem;font-weight:700;color:var(--ink);flex:1;min-width:0}
+.pg-services-preview{font-size:.72rem;color:var(--ink-3);flex:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pg-badges{display:flex;gap:4px;align-items:center;flex-shrink:0}
+.srv-name{font-size:.85rem;font-weight:600;flex:1;color:var(--ink)}
+.srv-criteria{font-size:.72rem;color:var(--ink-3);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.srv-badges{display:flex;gap:4px;align-items:center;flex-shrink:0}
+.badge-2ww{background:#FEE2E2;color:#991B1B}
+.badge-urgent{background:#FEF3C7;color:#92400E}
+.badge-routine{background:#D1FAE5;color:#065F46}
+.badge-ur{background:#DBEAFE;color:#1D4ED8}
+.badge-ras{background:#EDE9FE;color:#5B21B6}
+.badge-cas{background:#FDE68A;color:#92400E}
+.badge-paeds{background:#FCE7F3;color:#9D174D}
+.topic-group{margin-bottom:28px}
+.topic-group-header{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);padding:8px 0;margin-bottom:10px;display:flex;align-items:center;gap:8px;border-bottom:2px solid var(--border)}
+.tg-count{background:var(--blue-light);color:var(--blue);font-size:.65rem;border-radius:10px;padding:1px 7px;font-weight:700}
+.cas-notice{background:#EFF6FF;border:1px solid #BAE6FD;border-radius:6px;padding:8px 12px;margin-top:8px;font-size:.78rem;color:#0C4A6E}
+.note-block{background:var(--surface-2);border:1px solid var(--border-light);border-radius:6px;padding:8px 12px;margin-top:8px;font-size:.78rem;color:var(--ink-2);white-space:pre-wrap;line-height:1.5}
+.contact-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid var(--border-light)}
+.contact-item{display:flex;flex-direction:column;gap:2px}
+.contact-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3)}
+.contact-val{font-size:.82rem;color:var(--ink);display:flex;align-items:center;gap:5px}
+.contact-val a{color:var(--blue);text-decoration:none}
+.contact-val a:hover{text-decoration:underline}
+.copy-btn{font-size:.65rem;background:var(--border-light);border:none;border-radius:3px;padding:1px 5px;cursor:pointer;color:var(--ink-3);transition:all .15s}
+.copy-btn:hover{background:var(--blue);color:white}
+.copy-btn.copied{background:var(--green);color:white}
+.source-badge{font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px}
+.source-nw{background:#DBEAFE;color:#1D4ED8}
+.source-es{background:#D1FAE5;color:#065F46}
+.source-gw{background:#F3E8FF;color:#6D28D9}
+.source-all{background:#F3F4F6;color:#6B7280}
+.results-title-block{flex:1;min-width:0}
+.sr-no-results{padding:16px;font-size:.85rem;color:var(--ink-3);text-align:center}
+.comm-card-header{display:flex;align-items:center;gap:8px}
+.comm-card-name{font-size:.92rem;font-weight:700}
+.comm-card-criteria{font-size:.78rem;color:var(--ink-3)}
+.comm-card-details{display:flex;flex-direction:column;gap:6px}
+.comm-detail-row{display:flex;gap:8px;align-items:baseline}
+.comm-detail-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);width:55px;flex-shrink:0}
+.comm-contact-links{display:flex;flex-direction:column;gap:3px}
+.comm-contact-link{font-size:.82rem;color:var(--blue);text-decoration:none}
+</style>
+<style>
+.badge-email{background:#DBEAFE;color:#1D4ED8}
+.badge-age{background:#EEF1F6;color:#4A5568}
+.badge-paeds{background:#E0F2FE;color:#075985}
+/* Hide header badges when provider lists multiple services */
+.provider-group.has-multi .provider-group-header .badge,
+.provider-group.has-multi .provider-group-header .badge-urgent,
+.provider-group.has-multi .provider-group-header .badge-routine,
+.provider-group.has-multi .provider-group-header .badge-ras,
+.provider-group.has-multi .provider-group-header .badge-cas,
+.provider-group.has-multi .provider-group-header .badge-ur,
+.provider-group.has-multi .provider-group-header .badge-2ww,
+.provider-group.has-multi .provider-group-header .badge-email,
+.provider-group.has-multi .provider-group-header .badge-age,
+.provider-group.has-multi .provider-group-header .badge-paeds { display:none !important; }
+</style>
+<style>
+/***** Enhancements (badges + provider header rules) *****/
+.badge-email{background:#DBEAFE;color:#1D4ED8}
+.badge-age{background:#EEF1F6;color:#4A5568}
+.badge-paeds{background:#E0F2FE;color:#075985}
+/* Hide header badges and preview when provider lists multiple services */
+.provider-group.has-multi .provider-group-header .badge,
+.provider-group.has-multi .provider-group-header .badge-urgent,
+.provider-group.has-multi .provider-group-header .badge-routine,
+.provider-group.has-multi .provider-group-header .badge-ras,
+.provider-group.has-multi .provider-group-header .badge-cas,
+.provider-group.has-multi .provider-group-header .badge-ur,
+.provider-group.has-multi .provider-group-header .badge-2ww,
+.provider-group.has-multi .provider-group-header .badge-email,
+.provider-group.has-multi .provider-group-header .badge-age,
+.provider-group.has-multi .provider-group-header .badge-paeds,
+.provider-group.has-multi .pg-services-preview { display:none !important; }
+</style>
+<style>
+/* Hybrid age filters styled to match .area-chip aesthetics */
+.age-filter{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0 8px}
+.age-chip-bar{display:flex;gap:8px}
+.age-chip{background:var(--surface);border:1px solid var(--border);padding:6px 10px;border-radius:20px;font-weight:600;color:var(--ink-2);cursor:pointer}
+.age-chip.active,.age-chip:hover{background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
+.age-slider-bar{display:flex;gap:10px;align-items:center}
+#age-slider{width:220px}
+</style></head>
+<body>
+<header class="site-header tab-ur">
+<div class="site-logo">NHS Surrey Referral Pathways <span>Surrey Heartlands ICB</span></div>
+<nav class="header-tabs">
+<button class="htab active" data-tab="ur" id="htab-ur">Urgent &amp; Routine</button>
+<button class="htab" data-tab="usc" id="htab-usc">USC &amp; Oncology</button>
+</nav>
+</header>
+<div class="page-wrap">
+<!-- UR Panel -->
+<div class="main-panel active" id="panel-ur">
+<div class="search-section">
+<div class="search-box"><span class="search-icon">🔍</span>
+<input autocomplete="off" id="global-search" placeholder="Search condition, body part, or specialty… e.g. 'hearing', 'knee', 'ADHD'" type="text"/>
+</div>
+<div class="search-hint">Try <strong>memory clinic</strong>, <strong>pelvic floor</strong>, <strong>warfarin</strong>, <strong>COPD</strong>, <strong>hearing aid</strong></div>
+<div class="age-filter"><div class="age-chip-bar"><button class="age-chip active" data-age="all">All</button><button class="age-chip" data-age="adult">Adult (18+)</button><button class="age-chip" data-age="paeds">Paeds (0–17)</button></div><div class="age-slider-bar"><input id="age-slider" max="120" min="0" step="1" type="range" value="0"/><span id="age-slider-value">0+</span></div></div><div class="area-filter" id="ur-area-filter">
+<span class="area-filter-label">Filter by area:</span>
+<button class="area-chip active" data-area="">All</button>
+<button class="area-chip" data-area="NW Surrey">NW Surrey</button>
+<button class="area-chip" data-area="East Surrey">East Surrey</button>
+<button class="area-chip" data-area="Surrey Downs">Surrey Downs</button>
+<button class="area-chip" data-area="Guildford &amp; Waverley">Guildford &amp; Waverley</button>
+<button class="area-chip" data-area="East Elmbridge">East Elmbridge</button>
+</div>
+<div id="search-results"></div>
+</div>
+<div id="home-view">
+<div class="systems-label">Browse by clinical area</div>
+<div class="systems-grid" id="systems-grid"></div>
+</div>
+<div id="results-panel" style="display:none">
+<div class="results-header-bar">
+<button class="results-back" data-role="back-to-home">← All Areas</button>
+<div class="results-title-block">
+<div class="results-sys-name"><span class="sys-icon-sm" id="results-icon"></span><span id="results-sys-name"></span></div>
+<div class="results-sub" id="results-sub"></div>
+</div>
+<div class="results-count-pill" id="results-count-pill"></div>
+</div>
+<div class="specialty-filter" id="specialty-filter-bar" style="display:none"></div>
+<div id="results-body"></div>
+</div>
+</div>
+<!-- USC Panel -->
+<div class="main-panel" id="panel-usc">
+<div id="usc-home-view">
+<div class="search-section" style="margin-bottom:20px">
+<div class="search-box"><span class="search-icon">🔍</span>
+<input autocomplete="off" id="usc-search" placeholder="Search cancer type or provider…" type="text"/>
+</div>
+<div class="area-filter" id="usc-area-filter">
+<span class="area-filter-label">Filter by area:</span>
+<button class="area-chip active" data-area="">All</button>
+<button class="area-chip" data-area="NW Surrey">NW Surrey</button>
+<button class="area-chip" data-area="East Surrey">East Surrey</button>
+</div>
+<div id="usc-search-results"></div>
+</div>
+<div class="systems-label">Browse by cancer type</div>
+<div class="systems-grid" id="usc-grid"></div>
+</div>
+<div id="usc-results-panel" style="display:none">
+<div class="results-header-bar">
+<button class="results-back" data-role="usc-back-home">← All Cancer Types</button>
+<div class="results-title-block">
+<div class="results-sys-name"><span class="sys-icon-sm" id="usc-results-icon"></span><span id="usc-results-title"></span></div>
+<div class="results-sub" id="usc-results-sub"></div>
+</div>
+<div class="results-count-pill" id="usc-results-count"></div>
+</div>
+<div id="usc-results-body"></div>
+</div>
+</div>
+</div>
+<footer style="margin-top:40px;padding:16px 24px;border-top:1px solid var(--border);background:var(--surface);text-align:center;">
+<p style="font-size:.72rem;color:var(--ink-3);line-height:1.6;">
+      ⚠️ Information accurate as of <span id="data-date">25 Feb 2026</span>.
+      Services, providers and referral pathways may change — always verify with your local ICB or provider before referring.
+    </p>
+</footer>
+
+<script>
+// NHS Surrey Referral Pathways — Fixed Standalone
+// Single plain <script> — no ES modules, no fetch, works from file://
+(function(){
+'use strict';
+
+var $ = function(s,r){ return (r||document).querySelector(s); };
+var $$ = function(s,r){ return [].slice.call((r||document).querySelectorAll(s)); };
+
+// ── Load embedded JSON ──────────────────────────────────────────
+function loadData(){
+  var el = document.getElementById('referral-data');
+  if(!el) return null;
+  try{ return JSON.parse(el.textContent||el.innerHTML); }
+  catch(e){ console.error('JSON parse error:',e); return null; }
+}
+
+// ── State ───────────────────────────────────────────────────────
+var S = {
+  data:null, idx:null,
+  sysId:null,       // current UR system
+  topicFilter:'',   // '' = all topics in system
+  area:'',          // '' = all areas
+};
+
+// ── Area matching ───────────────────────────────────────────────
+// Data region values: 'NW Surrey','East Surrey','Surrey Downs','G&W','East Elmbridge','All',''
+// Chip values:        'NW Surrey','East Surrey','Surrey Downs','Guildford & Waverley','East Elmbridge'
+var AREA_MAP = {
+  'Guildford & Waverley': ['G&W','Guildford & Waverley','NW Surrey','All',''],
+  'East Elmbridge':       ['East Elmbridge','NW Surrey','All',''],
+  'Surrey Downs':         ['Surrey Downs','East Surrey','All',''],
+  'NW Surrey':            ['NW Surrey','All',''],
+  'East Surrey':          ['East Surrey','All',''],
+};
+function regionMatch(region,area){
+  if(!area) return true;
+  if(!region||region==='All') return true;
+  var allowed = AREA_MAP[area];
+  if(allowed) return allowed.indexOf(region)!==-1;
+  return region===area;
+}
+
+// ── Build index ─────────────────────────────────────────────────
+function buildIndex(data){
+  var topicDisplay = (data.meta&&data.meta.topicDisplay)||{};
+  var aliases = data.aliases||{};
+  var systemsById={}, topicsBySysId={};
+  (data.bodySystems||[]).forEach(function(bs){
+    systemsById[bs.id]=bs; topicsBySysId[bs.id]=bs.topics||[];
+  });
+  var urByTopic={}, uscByTopic={};
+  (data.pathways||[]).forEach(function(p){ var t=p.topic||''; (urByTopic[t]=urByTopic[t]||[]).push(p); });
+  (data.usc||[]).forEach(function(p){ var t=p.topic||''; (uscByTopic[t]=uscByTopic[t]||[]).push(p); });
+
+  // Search index
+  function tok(s){ return (s||'').toString().toLowerCase().normalize('NFKD').replace(/[^\w]+/g,' ').trim().split(/\s+/).filter(Boolean); }
+  function harvest(p,fields){ return fields.reduce(function(a,f){ var v=p[f]; if(Array.isArray(v))v.forEach(function(s){tok(s).forEach(function(t){a.push(t);})}); else tok(v).forEach(function(t){a.push(t);}); return a; },[]); }
+
+  var searchIdx=[];
+  var allT={};
+  Object.keys(urByTopic).forEach(function(t){allT[t]=1;});
+  Object.keys(uscByTopic).forEach(function(t){allT[t]=1;});
+  Object.keys(allT).forEach(function(t){
+    var disp=topicDisplay[t]||t;
+    var tokens=tok(t).concat(tok(disp)).concat((aliases[t]||[]).reduce(function(a,al){return a.concat(tok(al));},[]));
+    if(urByTopic[t])  searchIdx.push({kind:'topic',tab:'ur', topic:t,label:disp,meta:{},tokens:tokens});
+    if(uscByTopic[t]) searchIdx.push({kind:'topic',tab:'usc',topic:t,label:disp,meta:{},tokens:tokens});
+  });
+  Object.keys(urByTopic).forEach(function(t){
+    urByTopic[t].forEach(function(p){
+      var toks=harvest(p,['provider','serviceName','specialty','clinicType','notes']);
+      searchIdx.push({kind:'service',tab:'ur',topic:t,label:p.serviceName||p.provider||t,meta:{provider:p.provider||''},tokens:toks});
+    });
+  });
+  return {topicDisplay:topicDisplay,systemsById:systemsById,topicsBySysId:topicsBySysId,urByTopic:urByTopic,uscByTopic:uscByTopic,community:data.community||[],searchIdx:searchIdx};
+}
+
+// ── HTML escaping ───────────────────────────────────────────────
+function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ── Badges ──────────────────────────────────────────────────────
+function priorityBadge(p){
+  if(!p) return '';
+  var l=p.toLowerCase();
+  if(l.indexOf('2ww')!==-1)          return '<span class="badge badge-2ww">2WW</span>';
+  if(l.indexOf('urgent & routine')!==-1||l.indexOf('urgent and routine')!==-1) return '<span class="badge badge-ur">U&amp;R</span>';
+  if(l.indexOf('urgent')!==-1)       return '<span class="badge badge-urgent">Urgent</span>';
+  if(l.indexOf('routine')!==-1)      return '<span class="badge badge-routine">Routine</span>';
+  return '';
+}
+function rasBadge(r){
+  if(!r) return '';
+  var l=r.toLowerCase();
+  if(l.indexOf('ras')!==-1)    return '<span class="badge badge-ras">RAS</span>';
+  if(l.indexOf('cas')!==-1)    return '<span class="badge badge-cas">CAS</span>';
+  if(l.indexOf('defer')!==-1||l.indexOf('bookable')!==-1) return '<span class="badge badge-routine">Bookable</span>';
+  return '';
+}
+function ageBadge(pg){ if(!pg) return ''; var l=pg.toLowerCase(); if(l.indexOf('paed')!==-1||l.indexOf('child')!==-1) return '<span class="badge badge-paeds">Paeds</span>'; return ''; }
+function srcClass(region){ if(!region) return 'source-all'; var r=region.toLowerCase(); if(r.indexOf('nw')!==-1) return 'source-nw'; if(r.indexOf('east surrey')!==-1||r.indexOf('east')!==-1) return 'source-es'; if(r.indexOf('g&w')!==-1||r.indexOf('guildford')!==-1) return 'source-gw'; return 'source-all'; }
+
+// ── Service card HTML ───────────────────────────────────────────
+function svcCard(svc){
+  var isEmail  = svc.method&&svc.method.toLowerCase()==='email';
+  var isPortal = svc.method&&svc.method.toLowerCase()==='portal';
+  var isCAS    = svc.rasType&&svc.rasType.toLowerCase().indexOf('cas')!==-1;
+  var email    = svc.email||'';
+  var phone    = svc.phone||'';
+  var notes    = (svc.notes&&svc.notes!=='None')?svc.notes:'';
+  var form     = (svc.formName&&svc.formName!=='None')?svc.formName:'';
+  var destVal  = esc(svc.serviceName||'—');
+  if(isEmail&&email&&email.indexOf('@')!==-1) destVal='<a href="mailto:'+esc(email)+'">'+esc(email)+'</a>';
+  else if(isPortal&&svc.serviceName&&svc.serviceName.indexOf('http')===0) destVal='<a href="'+esc(svc.serviceName)+'" target="_blank">'+esc(svc.serviceName)+'</a>';
+  var method = svc.method||'—';
+  if(method==='E-RS') method='e-RS'+(svc.rasType?' — '+svc.rasType:'');
+  var ersPath=(svc.specialty&&svc.clinicType&&svc.specialty!==svc.clinicType)?svc.specialty+' — '+svc.clinicType:(svc.clinicType||svc.specialty||'');
+  var rows='';
+  if(svc.region) rows+='<tr><td class="ref-label">Area</td><td class="ref-val"><span class="source-badge '+srcClass(svc.region)+'">'+esc(svc.region)+'</span></td></tr>';
+  if(form)       rows+='<tr><td class="ref-label">Form (EMIS)</td><td class="ref-val">'+esc(form)+'</td></tr>';
+  rows+='<tr><td class="ref-label">Referral method</td><td class="ref-val"><strong>'+esc(method)+'</strong></td></tr>';
+  if(ersPath&&!isEmail&&!isPortal) rows+='<tr><td class="ref-label">e-RS pathway</td><td class="ref-val">'+esc(ersPath)+'</td></tr>';
+  rows+='<tr><td class="ref-label">'+(isEmail?'Email address':isPortal?'Portal URL':'e-RS service name')+'</td><td class="ref-val">'+destVal+'</td></tr>';
+  if(svc.criteria) rows+='<tr><td class="ref-label">Age / criteria</td><td class="ref-val">'+esc(svc.criteria)+'</td></tr>';
+  var emailDisplay=email&&email.indexOf('@')!==-1?'<a href="mailto:'+esc(email)+'">'+esc(email)+'</a><button class="copy-btn" data-copy="'+esc(email)+'" title="Copy">⧉</button>':(esc(email)||'[TBC]');
+  var html='<table class="ref-table">'+rows+'</table>';
+  if(isCAS) html+='<div class="cas-notice">ℹ️ <strong>CAS pathway:</strong> Assessment only — patient does <strong>not</strong> attend an appointment.</div>';
+  html+='<div class="contact-row"><div class="contact-item"><span class="contact-lbl">📧 Dept email</span><span class="contact-val">'+emailDisplay+'</span></div><div class="contact-item"><span class="contact-lbl">📞 Phone</span><span class="contact-val">'+esc(phone||'[TBC]')+'</span></div></div>';
+  if(notes) html+='<div class="note-block">📋 '+esc(notes)+'</div>';
+  return html;
+}
+
+// ── Render all topics for a UR system ───────────────────────────
+function renderSystemResults(sysId, topicOverride){
+  var idx=S.idx, area=S.area;
+  var topics=idx.topicsBySysId[sysId]||[];
+  var activeTopics=topicOverride?[topicOverride]:topics;
+  var presentTopics=topics.filter(function(t){ return (idx.urByTopic[t]||[]).some(function(p){return regionMatch(p.region,area);}); });
+  var allCount=topics.reduce(function(n,t){ return n+(idx.urByTopic[t]||[]).filter(function(p){return regionMatch(p.region,area);}).length; },0);
+  var sys=idx.systemsById[sysId];
+
+  var el=$('#results-sys-name'); if(el) el.textContent=sys?sys.name:sysId;
+  var ic=$('#results-icon'); if(ic) ic.textContent=sys?(sys.icon||''):'';
+  var sub=$('#results-sub'); if(sub) sub.textContent=presentTopics.map(function(t){return idx.topicDisplay[t]||t;}).join(' · ');
+  var pill=$('#results-count-pill'); if(pill) pill.textContent=allCount+' services';
+
+  buildTopicFilterBar(sysId, presentTopics);
+
+  var body=$('#results-body'); if(!body) return;
+  body.innerHTML='';
+
+  activeTopics.forEach(function(topic){
+    var rows=(idx.urByTopic[topic]||[]).filter(function(p){return regionMatch(p.region,area);});
+    if(!rows.length) return;
+    var tg=document.createElement('div'); tg.className='topic-group';
+    var th=document.createElement('div'); th.className='topic-group-header';
+    th.innerHTML=esc(idx.topicDisplay[topic]||topic)+' <span class="tg-count">'+rows.length+'</span>';
+    tg.appendChild(th);
+
+    // Group by provider
+    var byProv={};
+    rows.forEach(function(p){ var k=p.provider||'Unknown'; (byProv[k]=byProv[k]||[]).push(p); });
+
+    Object.keys(byProv).sort().forEach(function(prov){
+      var svcs=byProv[prov];
+      var pg=document.createElement('div'); pg.className='provider-group';
+      var priB=[],rasB=[];
+      svcs.forEach(function(s){ var pb=priorityBadge(s.priority); if(pb&&priB.indexOf(pb)===-1)priB.push(pb); var rb=rasBadge(s.rasType); if(rb&&rasB.indexOf(rb)===-1)rasB.push(rb); });
+      var preview=svcs.slice(0,3).map(function(s){return s.serviceName||'';}).filter(Boolean).join(' · ')||(svcs.length+' services');
+      var hdr=document.createElement('div'); hdr.className='provider-group-header';
+      hdr.innerHTML='<span class="pg-provider">'+esc(prov)+'</span><span class="pg-services-preview">'+esc(preview)+'</span><span class="pg-badges">'+priB.join('')+rasB.join('')+'</span><button class="pg-toggle">▼</button>';
+      pg.appendChild(hdr);
+      var list=document.createElement('div'); list.className='services-list'; list.style.display='none';
+      hdr.addEventListener('click',function(){ var open=list.style.display==='block'; list.style.display=open?'none':'block'; var tog=hdr.querySelector('.pg-toggle'); if(tog)tog.classList.toggle('open',!open); });
+      pg.appendChild(list);
+
+      svcs.forEach(function(svc){
+        var row=document.createElement('div'); row.className='service-row';
+        var rh=document.createElement('div'); rh.className='service-row-header';
+        rh.innerHTML='<span class="srv-name">'+esc(svc.serviceName||'')+'</span><span class="srv-criteria">'+esc(svc.criteria||'')+'</span><span class="srv-badges">'+priorityBadge(svc.priority)+rasBadge(svc.rasType)+ageBadge(svc.patientGroup)+'</span><button class="srv-toggle">▼</button>';
+        var sb=document.createElement('div'); sb.className='service-body';
+        sb.innerHTML=svcCard(svc);
+        rh.addEventListener('click',function(){ var open=sb.classList.toggle('open'); var tog=rh.querySelector('.srv-toggle'); if(tog)tog.classList.toggle('open',open); });
+        row.appendChild(rh); row.appendChild(sb); list.appendChild(row);
+      });
+      tg.appendChild(pg);
+    });
+    body.appendChild(tg);
+  });
+
+  if(!body.firstChild) body.innerHTML='<div style="text-align:center;padding:40px;color:var(--ink-3)">No services found for the selected area.</div>';
+}
+
+// ── Topic filter bar ─────────────────────────────────────────────
+function buildTopicFilterBar(sysId, presentTopics){
+  var bar=$('#specialty-filter-bar'); if(!bar) return;
+  if(presentTopics.length<=1){ bar.style.display='none'; return; }
+  var idx=S.idx, area=S.area;
+  bar.innerHTML=''; bar.style.display='flex';
+  var totalCount=presentTopics.reduce(function(n,t){return n+(idx.urByTopic[t]||[]).filter(function(p){return regionMatch(p.region,area);}).length;},0);
+  var chips=[{label:'All',value:'',count:totalCount}].concat(presentTopics.map(function(t){
+    return {label:idx.topicDisplay[t]||t, value:t, count:(idx.urByTopic[t]||[]).filter(function(p){return regionMatch(p.region,area);}).length};
+  }));
+  chips.forEach(function(c){
+    var btn=document.createElement('button');
+    btn.className='spec-chip'+(c.value===S.topicFilter?' active':'');
+    btn.innerHTML=esc(c.label)+' <span class="chip-count">'+c.count+'</span>';
+    btn.addEventListener('click',function(){
+      S.topicFilter=c.value;
+      $$('.spec-chip',bar).forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      renderSystemResults(sysId, c.value||undefined);
+      var pill=$('#results-count-pill'); if(pill) pill.textContent=c.count+' services';
+    });
+    bar.appendChild(btn);
+  });
+}
+
+// ── UR systems grid ──────────────────────────────────────────────
+function renderURGrid(){
+  var grid=$('#systems-grid'); if(!grid) return;
+  grid.innerHTML='';
+  Object.keys(S.idx.systemsById).forEach(function(sysId){
+    var sys=S.idx.systemsById[sysId], topics=S.idx.topicsBySysId[sysId]||[];
+    var count=topics.reduce(function(n,t){return n+(S.idx.urByTopic[t]||[]).filter(function(p){return regionMatch(p.region,S.area);}).length;},0);
+    if(!count&&sysId!=='community') return;
+    var btn=document.createElement('button'); btn.className='sys-btn'+(S.sysId===sysId?' active':''); btn.dataset.system=sysId;
+    btn.innerHTML='<div class="sys-icon">'+(sys.icon||'•')+'</div><div class="sys-name">'+esc(sys.name)+'</div><div class="sys-count">'+(sysId==='community'?'—':count)+'</div>';
+    btn.addEventListener('click',function(){openURSystem(sysId);});
+    grid.appendChild(btn);
+  });
+}
+
+function openURSystem(sysId){
+  S.sysId=sysId; S.topicFilter='';
+  if(sysId==='community'){ showResultsPanel(); renderCommunity(); return; }
+  showResultsPanel();
+  renderSystemResults(sysId);
+  $$('.sys-btn').forEach(function(b){b.classList.toggle('active',b.dataset.system===sysId);});
+}
+
+function showResultsPanel(){ $('#home-view').style.display='none'; $('#results-panel').style.display='block'; }
+
+function showHomeView(){
+  S.sysId=null; S.topicFilter='';
+  $('#home-view').style.display=''; $('#results-panel').style.display='none';
+  $$('.sys-btn').forEach(function(b){b.classList.remove('active');});
+  var gs=$('#global-search'); if(gs) gs.value='';
+  hideSearch();
+}
+
+// ── Community ────────────────────────────────────────────────────
+function renderCommunity(){
+  var sys=S.idx.systemsById['community'];
+  var ic=$('#results-icon'); if(ic) ic.textContent=sys?(sys.icon||'🏘️'):'🏘️';
+  var nm=$('#results-sys-name'); if(nm) nm.textContent='Community & Direct';
+  var sub=$('#results-sub'); if(sub) sub.textContent='Services referred directly — not via e-RS';
+  var pill=$('#results-count-pill'); if(pill) pill.textContent=S.idx.community.length+' services';
+  var bar=$('#specialty-filter-bar'); if(bar) bar.style.display='none';
+  var body=$('#results-body'); body.innerHTML='';
+  var grid=document.createElement('div'); grid.className='comm-grid';
+  S.idx.community.forEach(function(c){
+    var card=document.createElement('div'); card.className='comm-card';
+    var cLink='';
+    if(c.contact){ if(c.contact.indexOf('@')!==-1) cLink='<a href="mailto:'+esc(c.contact)+'" class="comm-contact-link">✉️ '+esc(c.contact)+'</a>'; else if(c.contact.indexOf('http')===0) cLink='<a href="'+esc(c.contact)+'" target="_blank" class="comm-contact-link">🔗 '+esc(c.contact)+'</a>'; else cLink='<span class="comm-contact-link">📞 '+esc(c.contact)+'</span>'; }
+    card.innerHTML='<div class="comm-card-header"><span style="font-size:18px">🏘️</span><span class="comm-card-name">'+esc(c.name||'')+'</span></div>'+(c.criteria?'<div class="comm-card-criteria">'+esc(c.criteria)+'</div>':'')+'<div class="comm-card-details">'+(c.formName?'<div class="comm-detail-row"><span class="comm-detail-lbl">Form</span><span>'+esc(c.formName)+'</span></div>':'')+(cLink?'<div class="comm-detail-row"><span class="comm-detail-lbl">Contact</span><div class="comm-contact-links">'+cLink+'</div></div>':'')+'</div>';
+    grid.appendChild(card);
+  });
+  body.appendChild(grid);
+}
+
+// ── USC panel ────────────────────────────────────────────────────
+function renderUSCGrid(){
+  var grid=$('#usc-grid'); if(!grid) return;
+  grid.innerHTML='';
+  Object.keys(S.idx.systemsById).forEach(function(sysId){
+    var sys=S.idx.systemsById[sysId], topics=S.idx.topicsBySysId[sysId]||[];
+    var count=topics.reduce(function(n,t){return n+(S.idx.uscByTopic[t]||[]).length;},0);
+    if(!count) return;
+    var btn=document.createElement('button'); btn.className='sys-btn';
+    btn.innerHTML='<div class="sys-icon">'+(sys.icon||'•')+'</div><div class="sys-name">'+esc(sys.name)+'</div><div class="sys-count">'+count+'</div>';
+    btn.addEventListener('click',function(){openUSCSystem(sysId);});
+    grid.appendChild(btn);
+  });
+}
+
+function openUSCSystem(sysId){
+  var idx=S.idx, sys=idx.systemsById[sysId], topics=idx.topicsBySysId[sysId]||[];
+  var items=topics.reduce(function(a,t){return a.concat(idx.uscByTopic[t]||[]);}, []);
+  $('#usc-home-view').style.display='none'; $('#usc-results-panel').style.display='block';
+  var ic=$('#usc-results-icon'); if(ic) ic.textContent=sys?(sys.icon||''):'';
+  var ti=$('#usc-results-title'); if(ti) ti.textContent=sys?sys.name:sysId;
+  var su=$('#usc-results-sub'); if(su) su.textContent='2-week wait / USC pathways';
+  var ct=$('#usc-results-count'); if(ct) ct.textContent=items.length+' pathways';
+  var body=$('#usc-results-body'); body.innerHTML='';
+  var byProv={};
+  items.forEach(function(p){var k=p.provider||'Unknown';(byProv[k]=byProv[k]||[]).push(p);});
+  Object.keys(byProv).sort().forEach(function(prov){
+    var svcs=byProv[prov], pg=document.createElement('div'); pg.className='provider-group';
+    var preview=svcs.slice(0,3).map(function(s){return s.topic||s.serviceName||'';}).filter(Boolean).join(' · ');
+    var hdr=document.createElement('div'); hdr.className='provider-group-header';
+    hdr.innerHTML='<span class="pg-provider">'+esc(prov)+'</span><span class="pg-services-preview">'+esc(preview)+'</span><span class="pg-badges"><span class="badge badge-2ww">2WW</span></span><button class="pg-toggle">▼</button>';
+    pg.appendChild(hdr);
+    var list=document.createElement('div'); list.className='services-list'; list.style.display='none';
+    hdr.addEventListener('click',function(){var open=list.style.display==='block';list.style.display=open?'none':'block';var tog=hdr.querySelector('.pg-toggle');if(tog)tog.classList.toggle('open',!open);});
+    pg.appendChild(list);
+    svcs.forEach(function(svc){
+      var row=document.createElement('div'); row.className='service-row';
+      var rh=document.createElement('div'); rh.className='service-row-header';
+      rh.innerHTML='<span class="srv-name">'+esc(svc.topic||svc.serviceName||'')+'</span><span class="srv-criteria">'+esc(svc.criteria||'')+'</span><span class="srv-badges"><span class="badge badge-2ww">2WW</span></span><button class="srv-toggle">▼</button>';
+      var sb=document.createElement('div'); sb.className='service-body'; sb.innerHTML=svcCard(svc);
+      rh.addEventListener('click',function(){var open=sb.classList.toggle('open');var tog=rh.querySelector('.srv-toggle');if(tog)tog.classList.toggle('open',open);});
+      row.appendChild(rh); row.appendChild(sb); list.appendChild(row);
+    });
+    body.appendChild(pg);
+  });
+}
+
+// ── Search ───────────────────────────────────────────────────────
+var _kb=-1;
+function hideSearch(){ var h=$('#search-results'); if(h){h.style.display='none';h.innerHTML='';} _kb=-1; }
+function runSearch(q){
+  var host=$('#search-results'); if(!host) return;
+  var s=(q||'').trim().toLowerCase();
+  if(s.length<2){hideSearch();return;}
+  var qToks=s.split(/\s+/).filter(Boolean);
+  function score(e){ var sc=0; qToks.forEach(function(qt){if(e.tokens&&e.tokens.some(function(t){return t.indexOf(qt)===0;}))sc+=2;}); if(((e.label||'')+' '+(e.topic||'')).toLowerCase().indexOf(s)!==-1)sc+=3; return sc; }
+  var ranked=S.idx.searchIdx.map(function(x){return {kind:x.kind,tab:x.tab,topic:x.topic,label:x.label,meta:x.meta,tokens:x.tokens,_s:score(x)};}).filter(function(x){return x._s>0;}).sort(function(a,b){return b._s-a._s;}).slice(0,20);
+  if(!ranked.length){host.innerHTML='<div class="sr-no-results">No results — try a different term or browse below.</div>';host.style.display='block';return;}
+  function group(fn,label){
+    var items=ranked.filter(fn); if(!items.length) return '';
+    return '<div class="sr-group-label">'+label+'</div>'+items.map(function(it){
+      var sysIcon='🏥';
+      Object.keys(S.idx.topicsBySysId).forEach(function(id){if(S.idx.topicsBySysId[id].indexOf(it.topic)!==-1)sysIcon=S.idx.systemsById[id].icon||'🏥';});
+      return '<button class="sr-item" data-tab="'+it.tab+'" data-topic="'+esc(it.topic)+'"><span class="sr-icon">'+sysIcon+'</span><span class="sr-main"><div class="sr-topic">'+esc(it.label||it.topic)+'</div><div class="sr-meta">'+esc(it.meta&&it.meta.provider||'')+'</div></span><span class="sr-tag">'+it.tab.toUpperCase()+'</span></button>';
+    }).join('');
+  }
+  host.innerHTML=group(function(x){return x.kind==='topic'&&x.tab==='ur';},'Topics (U&amp;R)')+group(function(x){return x.kind==='service'&&x.tab==='ur';},'Services (U&amp;R)')+group(function(x){return x.kind==='topic'&&x.tab==='usc';},'Topics (USC)')+group(function(x){return x.kind==='service'&&x.tab==='usc';},'Services (USC)');
+  host.style.display=host.innerHTML.trim()?'block':'none';
+}
+
+// ── Tab switching ────────────────────────────────────────────────
+function setTab(tab){
+  var hdr=$('header.site-header');
+  if(hdr){hdr.classList.toggle('tab-ur',tab==='ur');hdr.classList.toggle('tab-usc',tab==='usc');}
+  $$('.htab').forEach(function(b){b.classList.toggle('active',b.dataset.tab===tab);});
+  var pu=$('#panel-ur'),pus=$('#panel-usc');
+  if(pu)pu.classList.toggle('active',tab==='ur');
+  if(pus)pus.classList.toggle('active',tab==='usc');
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+function init(){
+  var data=loadData();
+  if(!data||!data.pathways){
+    document.body.insertAdjacentHTML('afterbegin','<div style="background:#FEF3C7;color:#92400E;padding:12px 16px;font-weight:600;position:sticky;top:0;z-index:200">⚠️ Could not load embedded data. Please re-download this file.</div>');
+    return;
+  }
+  S.data=data; S.idx=buildIndex(data);
+  // Footer date
+  if(data.meta&&data.meta.version){var sp=$('#data-date');if(sp){var d=new Date(data.meta.version);if(!isNaN(d))sp.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});}}
+  // Tab buttons
+  $$('.htab').forEach(function(btn){btn.addEventListener('click',function(){setTab(btn.dataset.tab);});});
+  // Back buttons
+  document.addEventListener('click',function(e){
+    if(e.target.closest('[data-role="back-to-home"]')){showHomeView();return;}
+    if(e.target.closest('[data-role="usc-back-home"]')){$('#usc-home-view').style.display='';$('#usc-results-panel').style.display='none';return;}
+  });
+  // Area filter
+  document.addEventListener('click',function(e){
+    var chip=e.target.closest('.area-chip'); if(!chip) return;
+    var panel=chip.closest('#panel-ur,#panel-usc'); if(!panel) return;
+    if(panel.id==='panel-ur'){
+      S.area=chip.dataset.area||'';
+      $$('.area-chip',panel).forEach(function(b){b.classList.toggle('active',(b.dataset.area||'')===S.area);});
+      renderURGrid();
+      if(S.sysId&&S.sysId!=='community'){S.topicFilter='';renderSystemResults(S.sysId);}
+    } else {
+      $$('.area-chip',panel).forEach(function(b){b.classList.toggle('active',(b.dataset.area||'')===(chip.dataset.area||''));});
+      renderUSCGrid();
+    }
+  });
+  // Copy buttons
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('.copy-btn'); if(!btn) return;
+    if(navigator.clipboard)navigator.clipboard.writeText(btn.dataset.copy||'').then(function(){btn.textContent='✓';btn.classList.add('copied');setTimeout(function(){btn.textContent='⧉';btn.classList.remove('copied');},1500);});
+  });
+  // Search input
+  var sb=$('#global-search');
+  if(sb){ sb.addEventListener('input',function(e){_kb=-1;runSearch(e.target.value);}); sb.addEventListener('focus',function(e){if(e.target.value)runSearch(e.target.value);}); }
+  // Keyboard nav
+  document.addEventListener('keydown',function(e){
+    var host=$('#search-results');
+    var isOpen=host&&host.style.display!=='none'&&host.innerHTML.trim();
+    if(e.key==='Escape'){if(isOpen){hideSearch();return;}if(S.sysId){showHomeView();return;}}
+    if(!sb||(document.activeElement!==sb&&!isOpen)) return;
+    var items=$$('.sr-item',host);
+    if(e.key==='ArrowDown'){e.preventDefault();_kb=Math.min(_kb+1,items.length-1);items.forEach(function(el,i){el.classList.toggle('kb-focus',i===_kb);});if(items[_kb])items[_kb].scrollIntoView({block:'nearest'});}
+    else if(e.key==='ArrowUp'){e.preventDefault();if(_kb<=0){_kb=-1;sb.focus();}else{_kb--;items.forEach(function(el,i){el.classList.toggle('kb-focus',i===_kb);});}}
+    else if(e.key==='Enter'&&_kb>=0&&items[_kb]){e.preventDefault();items[_kb].click();_kb=-1;}
+  });
+  // Search result clicks + outside-click to close
+  document.addEventListener('click',function(e){
+    var item=e.target.closest('.sr-item');
+    if(item){
+      var tab=item.dataset.tab, topic=item.dataset.topic; hideSearch(); if(sb)sb.value='';
+      if(tab==='usc'){setTab('usc');var sid=Object.keys(S.idx.topicsBySysId).filter(function(id){return S.idx.topicsBySysId[id].indexOf(topic)!==-1;})[0];if(sid)openUSCSystem(sid);}
+      else{setTab('ur');var sid2=Object.keys(S.idx.topicsBySysId).filter(function(id){return S.idx.topicsBySysId[id].indexOf(topic)!==-1;})[0];if(sid2){S.topicFilter=topic;openURSystem(sid2);}}
+      return;
+    }
+    if(!e.target.closest('#global-search')&&!e.target.closest('#search-results'))hideSearch();
+  });
+  // USC search
+  var ub=$('#usc-search'), uh=$('#usc-search-results');
+  if(ub&&uh){
+    ub.addEventListener('input',function(){
+      var q=ub.value.trim().toLowerCase(); if(!q){uh.innerHTML='';uh.style.display='none';return;}
+      var hits=[];
+      Object.keys(S.idx.uscByTopic).forEach(function(t){S.idx.uscByTopic[t].forEach(function(r){if([t,r.provider,r.serviceName,r.criteria].join(' ').toLowerCase().indexOf(q)!==-1)hits.push({_t:t,provider:r.provider,serviceName:r.serviceName,criteria:r.criteria});});});
+      hits=hits.slice(0,20);
+      if(!hits.length){uh.innerHTML='<div class="sr-no-results">No results</div>';uh.style.display='block';return;}
+      var by={};hits.forEach(function(h){(by[h._t]=by[h._t]||[]).push(h);});
+      uh.innerHTML=Object.keys(by).map(function(g){return '<div class="sr-group-label">'+esc(g)+'</div>'+by[g].map(function(d){return '<button class="sr-item" data-topic="'+esc(g)+'" data-tab="usc"><span class="sr-icon">🟣</span><span class="sr-main"><div class="sr-topic">'+esc(d.provider)+'</div><div class="sr-meta">'+esc(d.serviceName||d.criteria||'')+'</div></span></button>';}).join('');}).join('');
+      uh.style.display='block';
+    });
+    uh.addEventListener('click',function(e){var item=e.target.closest('.sr-item');if(!item)return;var sid=Object.keys(S.idx.topicsBySysId).filter(function(id){return S.idx.topicsBySysId[id].indexOf(item.dataset.topic)!==-1;})[0];if(sid)openUSCSystem(sid);ub.value='';uh.innerHTML='';uh.style.display='none';});
+  }
+  // Initial render
+  setTab('ur'); renderURGrid(); renderUSCGrid();
+}
+
+document.addEventListener('DOMContentLoaded',init);
+})();
+</script>
+<script>
+(function(){
+  const LS_KEY_PREFIX='nhs-ref-providers-';
+  function topicKey(){
+    try{
+      const t = (window.App && App.state && (App.state.currentTopic?.ur||App.state.currentTopic?.usc)) || '';
+      const tab = (App && App.state && App.state.currentTab) || 'ur';
+      return LS_KEY_PREFIX+tab+':'+t;
+    }catch(_){ return LS_KEY_PREFIX+'ur:'; }
+  }
+  function saveProviderStates(){
+    try{
+      const key = topicKey();
+      const states = {};
+      document.querySelectorAll('.provider-group').forEach(pg=>{
+        const prov = pg.querySelector('.pg-provider')?.textContent?.trim() || '';
+        const open = (pg.querySelector('.services-list')?.style.display==='block');
+        if(prov) states[prov]=open?1:0;
+      });
+      localStorage.setItem(key, JSON.stringify(states));
+    }catch(e){ console.warn('[Mem] save error', e); }
+  }
+  function restoreProviderStates(){
+    try{
+      const key = topicKey();
+      const raw = localStorage.getItem(key); if(!raw) return;
+      const states = JSON.parse(raw||'{}');
+      document.querySelectorAll('.provider-group').forEach(pg=>{
+        const prov = pg.querySelector('.pg-provider')?.textContent?.trim() || '';
+        const list = pg.querySelector('.services-list');
+        const tog  = pg.querySelector('.pg-toggle');
+        if(!list) return;
+        const open = !!states[prov];
+        list.style.display = open? 'block':'none';
+        if(tog) tog.classList.toggle('open', open);
+      });
+    }catch(e){ console.warn('[Mem] restore error', e); }
+  }
+
+  function normaliseAge(criteria){
+    if(!criteria) return '';
+    const s = String(criteria).trim();
+    const low = s.toLowerCase();
+    if(/all ages/.test(low)) return '';
+    // Under X
+    let m = low.match(/^under\s*(\d+)/);
+    if(m){
+      const n = parseInt(m[1],10);
+      if(n===1) return 'Under 1';
+      return `0-${n}`;
+    }
+    // X+
+    m = low.match(/^(\d+)\s*\+$/);
+    if(m){ return `${m[1]}+`; }
+    // A–B or A-B
+    m = low.match(/^(\d+)\s*[\-–]\s*(\d+)$/);
+    if(m){ return `${m[1]}-${m[2]}`; }
+    // Lonely number => N+
+    m = low.match(/^(\d+)$/);
+    if(m){ return `${m[1]}+`; }
+    return s;
+  }
+
+  function addHeaderPills(root){
+    try{
+      root = root || document;
+      root.querySelectorAll('.service-row').forEach(function(row){
+        const body = row.querySelector('.service-body');
+        const header = row.querySelector('.service-row-header');
+        if(!body||!header) return;
+        const rows = Array.from(body.querySelectorAll('table.ref-table tr'));
+        const getVal = (label)=>{ const r = rows.find(tr=>/^(\s*|)${label}(\s*|)$/i.test(tr.children?.[0]?.textContent||'')); return r? (r.children?.[1]?.textContent||'') : ''; };
+        // Email badge
+        const method = getVal('Method');
+        const isEmail = /email/i.test(method||'');
+        if(isEmail && !header.querySelector('.badge-email')){
+          const b=document.createElement('span'); b.className='badge badge-email'; b.textContent='Email'; header.appendChild(b);
+        }
+        // Age badge + Paeds if max==18
+        const crit = getVal('Criteria') || getVal('Age') || '';
+        const norm = normaliseAge(crit);
+        // Only add if we got a sensible string
+        if(norm){
+          if(!header.querySelector('.badge-age')){
+            const a=document.createElement('span'); a.className='badge badge-age'; a.textContent=norm; header.appendChild(a);
+          } else {
+            header.querySelector('.badge-age').textContent = norm;
+          }
+          let max = null; let m = norm.match(/-(\d+)$/); if(m) max = parseInt(m[1],10);
+          if(max===18 && !header.querySelector('.badge-paeds')){
+            const p=document.createElement('span'); p.className='badge badge-paeds'; p.textContent='Paeds'; header.appendChild(p);
+          }
+        }
+      });
+    }catch(e){ console.warn('[Enhancer] header pills error', e); }
+  }
+
+  function addCopyButtons(root){
+    try{
+      root = root || document;
+      root.querySelectorAll('.service-body table.ref-table').forEach(function(tbl){
+        const rows = Array.from(tbl.querySelectorAll('tr'));
+        rows.forEach(tr=>{
+          const label = (tr.children?.[0]?.textContent||'').trim().toLowerCase();
+          const valCell = tr.children?.[1]; if(!valCell) return;
+          let toCopy='';
+          if(label==='phone' || label==='tel' || /phone/i.test(label)){
+            const a=valCell.querySelector('a[href^="tel:"]');
+            toCopy = a? (a.getAttribute('href')||'').replace(/^tel:/,'') : (valCell.textContent||'').trim();
+          } else if(label==='email' || /email/i.test(label)){
+            const a=valCell.querySelector('a[href^="mailto:"]');
+            toCopy = a? (a.getAttribute('href')||'').replace(/^mailto:/,'') : (valCell.textContent||'').trim();
+          } else { return; }
+          if(!valCell.querySelector('.copy-btn')){
+            const b=document.createElement('button'); b.className='copy-btn'; b.textContent='▣'; b.title='Copy';
+            b.addEventListener('click', ()=>{
+              navigator.clipboard.writeText(toCopy).then(()=>{ b.textContent='✓'; setTimeout(()=>b.textContent='▣',1200); });
+            });
+            valCell.appendChild(b);
+          }
+        });
+      });
+    }catch(e){ console.warn('[Enhancer] copy-btn error', e); }
+  }
+
+  function markProviderMulti(){
+    document.querySelectorAll('.provider-group').forEach(pg=>{
+      const list = pg.querySelector('.services-list');
+      const count = list? list.querySelectorAll('.service-row').length : 0;
+      pg.classList.toggle('has-multi', count>1);
+    });
+  }
+
+  // Persist provider collapse state
+  document.addEventListener('click', function(e){
+    const hdr = e.target.closest('.provider-group-header');
+    if(!hdr) return;
+    setTimeout(()=>{ markProviderMulti(); saveProviderStates(); }, 60);
+  }, true);
+
+  function onViewChange(){
+    setTimeout(()=>{ restoreProviderStates(); markProviderMulti(); addHeaderPills(); addCopyButtons(); }, 120);
+  }
+  window.addEventListener('load', onViewChange);
+  document.addEventListener('data:indexed', onViewChange);
+  document.addEventListener('click', function(e){
+    if(e.target.closest('[data-role="back-to-home"],[data-role="usc-back-home"],.sys-btn,.sr-item')) onViewChange();
+  });
+})();
+</script>
+<script>
+(function(){
+  function text(el){ return (el && (el.textContent||'').trim()) || ''; }
+  function findRow(body, labelRe){
+    var rows = body.querySelectorAll('table.ref-table tr');
+    for(var i=0;i<rows.length;i++){
+      var td0 = rows[i].children[0];
+      if(td0 && labelRe.test(td0.textContent||'')) return rows[i];
+    }
+    return null;
+  }
+  function getVal(row){ return row && row.children[1] ? (row.children[1].textContent||'').trim() : ''; }
+
+  function normaliseAge(str){
+    str = (str||'').trim();
+    if(!str) return null;
+    var s = str.toLowerCase();
+    if(/all ages?/.test(s)) return {label:null,min:null,max:null};
+    // Special: keep 'Under 1' exactly
+    if(/^under\s*1\b/i.test(str)) return {label:'Under 1', min:0, max:1};
+
+    // Under N  => 0–N   (except Under 1 handled above)
+    var mUnder = s.match(/^under\s*(\d{1,3})\b/);
+    if(mUnder){
+      var up = parseInt(mUnder[1],10);
+      return {label:'0–'+up, min:0, max:up};
+    }
+    // N+  (e.g., 16+)
+    var mPlus = s.match(/^(\d{1,3})\s*\+\b/);
+    if(mPlus){
+      var lo = parseInt(mPlus[1],10);
+      return {label: lo+'+', min:lo, max:null};
+    }
+    // N–M  or N-M  (capture en dash or hyphen)
+    var mRange = s.match(/^(\d{1,3})\s*[–-]\s*(\d{1,3})\b/);
+    if(mRange){
+      var lo = parseInt(mRange[1],10), hi = parseInt(mRange[2],10);
+      var lbl = lo+'–'+hi; // use en-dash
+      return {label: lbl, min:lo, max:hi};
+    }
+    // Lone ages embedded like '18–99, Female only' etc.
+    var nums = s.match(/\d{1,3}(?:\s*[–-]\s*\d{1,3})?|\d{1,3}\+/);
+    if(nums){
+      return normaliseAge(nums[0]);
+    }
+    return null;
+  }
+
+  function ensureBadge(host, cls, text){
+    if(!host) return;
+    if(host.querySelector('.'+cls)) return;
+    var b=document.createElement('span');
+    b.className='badge '+cls;
+    b.textContent=text;
+    host.appendChild(b);
+  }
+
+  function addEmailBadges(root){
+    root = root || document;
+    var rows = root.querySelectorAll('.service-row');
+    rows.forEach(function(row){
+      var body = row.querySelector('.service-body');
+      var header = row.querySelector('.service-row-header');
+      if(!body || !header) return;
+      var methodRow = findRow(body, /method/i);
+      var val = getVal(methodRow);
+      var isEmail = /email/i.test(val);
+      var host = header.querySelector('.srv-badges') || header;
+      if(isEmail) ensureBadge(host, 'badge-email', 'Email');
+    });
+  }
+
+  function addAgeBadges(root){
+    root = root || document;
+    var rows = root.querySelectorAll('.service-row');
+    rows.forEach(function(row){
+      var body = row.querySelector('.service-body');
+      var header = row.querySelector('.service-row-header');
+      if(!body || !header) return;
+      var host = header.querySelector('.srv-badges') || header;
+      // Criteria
+      var cRow = findRow(body, /criteria/i);
+      var cVal = getVal(cRow);
+      var parsed = normaliseAge(cVal);
+      if(parsed && parsed.label){ ensureBadge(host, 'badge-age', parsed.label); }
+      // Paeds badge if max age == 18
+      if(parsed && parsed.max===18){ ensureBadge(host, 'badge-paeds', 'Paeds'); }
+    });
+  }
+
+  function addCopyButtons(root){
+    root = root || document;
+    // ref-table rows
+    var bodies = root.querySelectorAll('.service-body');
+    bodies.forEach(function(body){
+      var rows = body.querySelectorAll('table.ref-table tr');
+      rows.forEach(function(tr){
+        var lbl = text(tr.children[0]||null).toLowerCase();
+        if(!/(email|phone|telephone)/.test(lbl)) return;
+        var valCell = tr.children[1]; if(!valCell) return;
+        if(valCell.querySelector('.copy-btn')) return;
+        var toCopy = (valCell.textContent||'').trim();
+        if(!toCopy) return;
+        var btn = document.createElement('button');
+        btn.className='copy-btn';
+        btn.type='button';
+        btn.textContent='Copy';
+        btn.addEventListener('click', function(){
+          try{
+            navigator.clipboard.writeText(toCopy).then(function(){
+              btn.classList.add('copied');
+              btn.textContent='Copied';
+              setTimeout(function(){ btn.classList.remove('copied'); btn.textContent='Copy'; }, 1400);
+            });
+          }catch(e){ console.warn('Clipboard err', e); }
+        });
+        valCell.appendChild(document.createTextNode(' '));
+        valCell.appendChild(btn);
+      });
+    });
+    // contact blocks if present
+    var contacts = root.querySelectorAll('.contact-val');
+    contacts.forEach(function(val){
+      if(val.querySelector('.copy-btn')) return;
+      var toCopy = (val.textContent||'').trim();
+      if(!toCopy) return;
+      var btn = document.createElement('button');
+      btn.className='copy-btn'; btn.type='button'; btn.textContent='Copy';
+      btn.addEventListener('click', function(){
+        try{
+          navigator.clipboard.writeText(toCopy).then(function(){
+            btn.classList.add('copied'); btn.textContent='Copied';
+            setTimeout(function(){ btn.classList.remove('copied'); btn.textContent='Copy'; }, 1400);
+          });
+        }catch(e){ console.warn('Clipboard err', e); }
+      });
+      val.appendChild(document.createTextNode(' '));
+      val.appendChild(btn);
+    });
+  }
+
+  function tagProviderHasMulti(root){
+    root = root || document;
+    var groups = root.querySelectorAll('.provider-group');
+    groups.forEach(function(g){
+      var rows = g.querySelectorAll(':scope > .service-row');
+      if(rows.length > 1){
+        if(!g.classList.contains('has-multi')) g.classList.add('has-multi');
+        // Clear any badges present in header badge host
+        var hb = g.querySelector('.provider-group-header .pg-badges');
+        if(hb) hb.innerHTML='';
+      }
+    });
+  }
+
+  function getCurrentTopicKey(){
+    // try UR panel first
+    var t = document.querySelector('#results-sys-name');
+    if(t && t.textContent.trim()) return t.textContent.trim();
+    // USC panel
+    var u = document.querySelector('#usc-results-title');
+    if(u && u.textContent.trim()) return u.textContent.trim();
+    return 'global';
+  }
+
+  function setupProviderMemory(root){
+    root = root || document;
+    var topicKey = getCurrentTopicKey();
+    var groups = root.querySelectorAll('.provider-group');
+    groups.forEach(function(g, idx){
+      var provEl = g.querySelector('.pg-provider');
+      var prov = provEl ? provEl.textContent.trim() : ('#'+idx);
+      var key = 'pgmem:'+topicKey+':'+prov;
+      // restore
+      var want = localStorage.getItem(key);
+      if(want === 'open'){
+        // if group appears collapsed, simulate a click
+        // heuristic: preview exists and no first service-body is visible
+        var firstBody = g.querySelector('.service-body');
+        var isOpen = firstBody && firstBody.classList.contains('open');
+        if(!isOpen){
+          var header = g.querySelector('.provider-group-header');
+          if(header) header.click();
+        }
+      }
+      // bind save
+      var header = g.querySelector('.provider-group-header');
+      if(header && !header.dataset.memBound){
+        header.dataset.memBound = '1';
+        header.addEventListener('click', function(){
+          setTimeout(function(){
+            var firstBody = g.querySelector('.service-body');
+            var isOpen = firstBody && firstBody.classList.contains('open');
+            localStorage.setItem(key, isOpen ? 'open' : 'closed');
+          }, 200);
+        });
+      }
+    });
+  }
+
+  function enhance(){
+    try{
+      tagProviderHasMulti();
+      addEmailBadges();
+      addAgeBadges();
+      addCopyButtons();
+      setupProviderMemory();
+    }catch(e){ console.warn('[Enhancer]', e); }
+  }
+
+  window.addEventListener('load', function(){ setTimeout(enhance, 50); });
+  document.addEventListener('click', function(e){
+    if(e.target.closest('[data-role="back-to-home"],[data-role="usc-back-home"],.sys-btn,.sr-item,.htab, .area-chip')){
+      setTimeout(enhance, 150);
+    }
+  });
+  document.addEventListener('data:indexed', function(){ setTimeout(enhance, 50); });
+  // Mutation observer as safety net when results list changes
+  var obs = new MutationObserver(function(m){
+    for(var i=0;i<m.length;i++){
+      if(m[i].addedNodes && m[i].addedNodes.length){
+        enhance(); break;
+      }
+    }
+  });
+  var rb = document.getElementById('results-body'); if(rb) obs.observe(rb, {childList:true, subtree:true});
+  var urb = document.getElementById('usc-results-body'); if(urb) obs.observe(urb, {childList:true, subtree:true});
+})();
+</script>
+<!-- Providers injected block start -->
+<section id="providers-insert">
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Cardiology (Dorking General Hospital / Elizabeth House Medical Practice / Epsom Cottage Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Cardiology</td></tr>
+<tr><td>Clinic Types</td><td>Arrhythmia | Cardiology Genetics | Congenital Heart Disease | Heart Failure | Hypertension | Ischaemic Heart Disease | Lipid Management | Not Otherwise Specified | Rapid Access Chest Pain | Valve Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Elizabeth House Medical Practice</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Cardiology</td></tr>
+<tr><td>Clinic Types</td><td>Arrhythmia | Cardiology Genetics | Congenital Heart Disease | Heart Failure | Hypertension | Ischaemic Heart Disease | Not Otherwise Specified | Rapid Access Chest Pain | Valve Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Cardiology</td></tr>
+<tr><td>Clinic Types</td><td>Arrhythmia | Cardiology Genetics | Congenital Heart Disease | Heart Failure | Hypertension | Ischaemic Heart Disease | Lipid Management | Not Otherwise Specified | Rapid Access Chest Pain | Valve Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Cardiology</td></tr>
+<tr><td>Clinic Types</td><td>Arrhythmia | Cardiology Genetics | Congenital Heart Disease | Heart Failure | Hypertension | Ischaemic Heart Disease | Lipid Management | Not Otherwise Specified | Rapid Access Chest Pain | Valve Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Children's &amp; Adolescent Services (Dorking General Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">0–17</span>
+<span class="badge badge-paeds">Paeds</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Children's &amp; Adolescent Services</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Endocrinology | Gastroenterology | Metabolic Disorders | Nephrology | Neurology | Other Medical | Paediatric Haematology | Respiratory | Rheumatology</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>0–17</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">0–15</span>
+<span class="badge badge-paeds">Paeds</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Children's &amp; Adolescent Services</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Endocrinology | Gastroenterology | Metabolic Disorders | Nephrology | Neurology | Other Medical | Paediatric Haematology | Respiratory | Rheumatology</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>0–15</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Dermatology (Dorking General Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">12+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Dermatology</td></tr>
+<tr><td>Clinic Types</td><td>Acne | Basal Cell Carcinoma | Connective Tissue Disease | Eczema and Dermatitis | Hair | Leg Ulcer | Male Genital Skin Disorders | Nails | Not Otherwise Specified | Psoriasis | Skin Lesions (Non-2WW)</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>12+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">12+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Dermatology</td></tr>
+<tr><td>Clinic Types</td><td>Acne | Basal Cell Carcinoma | Connective Tissue Disease | Eczema and Dermatitis | Hair | Leg Ulcer | Male Genital Skin Disorders | Nails | Not Otherwise Specified | Patch Testing for Contact Dermatitis | Psoriasis | Skin Lesions (Non-2WW)</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>12+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">ENT (Dorking General Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">3+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>ENT</td></tr>
+<tr><td>Clinic Types</td><td>Ear | Facial Plastic and Skin Lesions | Hearing Tests/Aids - see Diag Phys Meas | Neck Lump / Thyroid | Nose / Sinus | Not Otherwise Specified | Salivary Gland | Sleep Apnoea - see Sleep Medicine | Snoring (not Sleep Apnoea) | Throat (incl Voice / Swallowing) | Tinnitus</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>3+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Endocrinology and Metabolic Medicine (Dorking General Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">17+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Endocrinology and Metabolic Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Adrenal Disorders | Endocrine Pregnancy | Gynaecological Endocrinology | Metabolic Bone Disorders | Not Otherwise Specified | Pituitary &amp; Hypothalamic | Thyroid / Parathyroid</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>17+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">17+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Endocrinology and Metabolic Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Adrenal Disorders | Gynaecological Endocrinology | Metabolic Bone Disorders | Not Otherwise Specified | Pituitary &amp; Hypothalamic | Thyroid / Parathyroid</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>17+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">GI and Liver (Medicine and Surgery) (Dorking General Hospital / Elizabeth House Medical Practice / Epsom Cottage Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>GI and Liver (Medicine and Surgery)</td></tr>
+<tr><td>Clinic Types</td><td>Colorectal Surgery | Endoscopy - see Diagnostic Endoscopy | Inflammatory Bowel Disease (IBD) | Lower GI (medical) excl IBD | Upper GI incl Dyspepsia</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Elizabeth House Medical Practice</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>GI and Liver (Medicine and Surgery)</td></tr>
+<tr><td>Clinic Types</td><td>Colorectal Surgery</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>GI and Liver (Medicine and Surgery)</td></tr>
+<tr><td>Clinic Types</td><td>Colorectal Surgery | Endoscopy - see Diagnostic Endoscopy | Hepatology | Inflammatory Bowel Disease (IBD) | Lower GI (medical) excl IBD | Upper GI incl Dyspepsia</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">General Medicine (Dorking General Hospital / Epsom Cottage Hospital / Holmhurst Medical Centre / OXTED HEALTH CENTRE)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>General Medicine</td></tr>
+<tr><td>Clinic Types</td><td>General Medicine</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>General Medicine</td></tr>
+<tr><td>Clinic Types</td><td>General Medicine</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>General Medicine</td></tr>
+<tr><td>Clinic Types</td><td>General Medicine</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">OXTED HEALTH CENTRE</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>General Medicine</td></tr>
+<tr><td>Clinic Types</td><td>General Medicine</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Geriatric Medicine (Dorking General Hospital / Elizabeth House Medical Practice / Epsom Cottage Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">65+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Geriatric Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Cognitive Disorders | Falls | Metabolic Bone Diseases | Movement Disorders | Not Otherwise Specified | Stroke (not TIA)</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>65+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Elizabeth House Medical Practice</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">65+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Geriatric Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Falls | Movement Disorders | Not Otherwise Specified | Stroke (not TIA)</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>65+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">65+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Geriatric Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Falls | Movement Disorders | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>65+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Gynaecology (Dorking General Hospital / Epsom Cottage Hospital / Holmhurst Medical Centre / OXTED HEALTH CENTRE)</span>
+<span class="pg-badges">
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Gynaecology</td></tr>
+<tr><td>Clinic Types</td><td>Menopause | Menstrual Disorders | Not Otherwise Specified | Pelvic Pain | Perineal Repair | Post Menopausal Bleeding | Vulval and Perineal Lesions</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Gynaecology</td></tr>
+<tr><td>Clinic Types</td><td>Menopause | Menstrual Disorders | Not Otherwise Specified | Pelvic Pain | Perineal Repair | Post Menopausal Bleeding | Urogynaecology / Prolapse | Vulval and Perineal Lesions</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Gynaecology</td></tr>
+<tr><td>Clinic Types</td><td>Menopause | Menstrual Disorders | Not Otherwise Specified | Pelvic Pain | Perineal Repair | Post Menopausal Bleeding | Urogynaecology / Prolapse | Vulval and Perineal Lesions</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">OXTED HEALTH CENTRE</span>
+<span class="srv-badges">
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Gynaecology</td></tr>
+<tr><td>Clinic Types</td><td>Menopause</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">MSK (Holmhurst Medical Centre / MEDWYN CENTRE)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>MSK</td></tr>
+<tr><td>Clinic Types</td><td>Spinal</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>nan</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>MSK</td></tr>
+<tr><td>Clinic Types</td><td>Pain Management</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>nan</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">MEDWYN CENTRE</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>MSK</td></tr>
+<tr><td>Clinic Types</td><td>Pain Management</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Neurology (Dorking General Hospital / Epsom Cottage Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Neurology</td></tr>
+<tr><td>Clinic Types</td><td>Cognitive Disorders | Epilepsy | Headache | Neuroinflammation - Multiple Sclerosis | Neuromuscular | Not Otherwise Specified | Parkinsons / Movement Disorders | Sleep - see Sleep Medicine | Stroke (not TIA)</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">17+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Neurology</td></tr>
+<tr><td>Clinic Types</td><td>Cognitive Disorders | Epilepsy | Headache | Neuroinflammation - Multiple Sclerosis | Neuromuscular | Not Otherwise Specified | Parkinsons / Movement Disorders | Sleep - see Sleep Medicine | Stroke (not TIA)</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>17+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Neurology</td></tr>
+<tr><td>Clinic Types</td><td>Cognitive Disorders | Epilepsy | Headache | Neuroinflammation - Multiple Sclerosis | Neuromuscular | Not Otherwise Specified | Oncology (Established Diagnosis) | Parkinsons / Movement Disorders | Sleep - see Sleep Medicine | Stroke (not TIA)</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Ophthalmology (Dorking General Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">10+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Ophthalmology</td></tr>
+<tr><td>Clinic Types</td><td>Cataract | Cornea | Diabetic Medical Retina | External Eye Disease | Glaucoma | Laser (YAG capsulotomy) | Neuro-Ophthalmology | Not Otherwise Specified | Oculoplastics/Orbits/Lacrimal | Orthoptics | Other Medical Retina | Squint / Ocular Motility</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>10+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Orthopaedics (Dorking General Hospital / Elizabeth House Medical Practice / Epsom Cottage Hospital / Holmhurst Medical Centre / MEDWYN CENTRE / OXTED HEALTH CENTRE)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">8+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Hand and Wrist | Hip | Knee | Podiatric Surgery | Shoulder and Elbow | Spine - Back Pain (not Scoliosis/Deform) | Spine - Neck Pain | Sports Trauma</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>8+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Elizabeth House Medical Practice</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">8+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Podiatric Surgery</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>8+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">8+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Podiatric Surgery | Shoulder and Elbow | Sports Trauma</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>8+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">3+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Hand and Wrist | Hip | Knee | Podiatric Surgery | Shoulder and Elbow | Spine - Back Pain (not Scoliosis/Deform) | Spine - Neck Pain | Sports Trauma</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>3+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">MEDWYN CENTRE</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Fracture - Non Emergency | Hand and Wrist | Hip | Knee | Limb Deformity/Reconstruction | Podiatric Surgery | Shoulder and Elbow | Spine - Back Pain (not Scoliosis/Deform) | Spine - Neck Pain | Sports Trauma</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">OXTED HEALTH CENTRE</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">8+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Podiatric Surgery</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>8+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Respiratory Medicine (Dorking General Hospital / Elizabeth House Medical Practice / Epsom Cottage Hospital / Holmhurst Medical Centre / OXTED HEALTH CENTRE)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Asthma | COPD | Cystic Fibrosis | Interstitial Lung Disease | Not Otherwise Specified | Occupational Lung Disease | Oncology (Established Diagnosis) | Sleep - see Sleep Medicine | Tuberculosis</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Elizabeth House Medical Practice</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Asthma | COPD | Cystic Fibrosis | Interstitial Lung Disease | Not Otherwise Specified | Occupational Lung Disease | Oncology (Established Diagnosis) | Sleep - see Sleep Medicine | Tuberculosis</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Asthma | COPD | Cystic Fibrosis | Interstitial Lung Disease | Not Otherwise Specified | Occupational Lung Disease | Oncology (Established Diagnosis) | Sleep - see Sleep Medicine | Tuberculosis</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Asthma | COPD | Cystic Fibrosis | Interstitial Lung Disease | Not Otherwise Specified | Occupational Lung Disease | Oncology (Established Diagnosis) | Sleep - see Sleep Medicine | Tuberculosis</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">OXTED HEALTH CENTRE</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Asthma | COPD | Interstitial Lung Disease | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Rheumatology (Dorking General Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Rheumatology</td></tr>
+<tr><td>Clinic Types</td><td>Bone / Osteoporosis | Inflammatory Arthritis | Musculoskeletal | Other Autoimmune Rheumatic Disease | Spinal Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Rheumatology</td></tr>
+<tr><td>Clinic Types</td><td>Bone / Osteoporosis | Inflammatory Arthritis | Musculoskeletal | Other Autoimmune Rheumatic Disease | Spinal Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Surgery - Not Otherwise Specified (Dorking General Hospital / Elizabeth House Medical Practice / Epsom Cottage Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Not Otherwise Specified</td></tr>
+<tr><td>Clinic Types</td><td>Hernias | Lumps and Bumps</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Elizabeth House Medical Practice</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Not Otherwise Specified</td></tr>
+<tr><td>Clinic Types</td><td>Hernias | Lumps and Bumps</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Not Otherwise Specified</td></tr>
+<tr><td>Clinic Types</td><td>Hernias | Lumps and Bumps</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Not Otherwise Specified</td></tr>
+<tr><td>Clinic Types</td><td>Hernias | Lumps and Bumps</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Surgery - Vascular (Dorking General Hospital / Epsom Cottage Hospital / Holmhurst Medical Centre)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Vascular</td></tr>
+<tr><td>Clinic Types</td><td>Arterial | Not Otherwise Specified | Varicose Veins</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Vascular</td></tr>
+<tr><td>Clinic Types</td><td>Arterial | Not Otherwise Specified | Varicose Veins</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Holmhurst Medical Centre</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Vascular</td></tr>
+<tr><td>Clinic Types</td><td>Arterial | Not Otherwise Specified | Varicose Veins</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>nan</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">DHC</span>
+<span class="pg-name">Urology (Dorking General Hospital / Elizabeth House Medical Practice / Epsom Cottage Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Dorking General Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Urology</td></tr>
+<tr><td>Clinic Types</td><td>(In) Continence | Erectile Dysfunction/Andrology | Haematuria (not 2WW) | Not Otherwise Specified | Oncology (Established Diagnosis) | Prostate | Urinary Calculus</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Elizabeth House Medical Practice</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Urology</td></tr>
+<tr><td>Clinic Types</td><td>Not Otherwise Specified | Prostate</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom Cottage Hospital</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Urology</td></tr>
+<tr><td>Clinic Types</td><td>Not Otherwise Specified | Prostate</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Allergy (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Allergy</td></tr>
+<tr><td>Clinic Types</td><td>Allergy</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Allergy</td></tr>
+<tr><td>Clinic Types</td><td>Allergy</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Cardiology (ESTH (unspecified site) / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Cardiology</td></tr>
+<tr><td>Clinic Types</td><td>Arrhythmia | Cardiology Genetics | Congenital Heart Disease | Heart Failure | Hypertension | Ischaemic Heart Disease | Not Otherwise Specified | Valve Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Cardiology</td></tr>
+<tr><td>Clinic Types</td><td>Arrhythmia | Cardiology Genetics | Congenital Heart Disease | Heart Failure | Hypertension | Ischaemic Heart Disease | Not Otherwise Specified | Valve Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Chemical Pathology (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Chemical Pathology</td></tr>
+<tr><td>Clinic Types</td><td>Lipid Disorders | Metabolic Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Chemical Pathology</td></tr>
+<tr><td>Clinic Types</td><td>Lipid Disorders | Metabolic Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Children's &amp; Adolescent Services (ESTH (unspecified site) / Epsom Hospital / St Helier (St Helier / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">0–16</span>
+<span class="badge badge-paeds">Paeds</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Children's &amp; Adolescent Services</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Cardiology | Community Paediatric | Dermatology | Developmental / Learning Disabilities | Diabetes | ENT | Endocrinology | Gastroenterology | Immunology | Metabolic Disorders | Nephrology | Neurology | Orthopaedics | Other Medical | Paediatric Haematology | Respiratory | Rheumatology | Surgery - Not otherwise specified | Urology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>0–16</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">0–16</span>
+<span class="badge badge-paeds">Paeds</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Children's &amp; Adolescent Services</td></tr>
+<tr><td>Clinic Types</td><td>Allergy | Cardiology | Community Paediatric | Dermatology | Developmental / Learning Disabilities | Diabetes | ENT | Endocrinology | Gastroenterology | Immunology | Metabolic Disorders | Nephrology | Neurology | Orthopaedics | Other Medical | Paediatric Haematology | Respiratory | Rheumatology | Surgery - Not otherwise specified</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>0–16</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Dermatology (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Dermatology</td></tr>
+<tr><td>Clinic Types</td><td>Acne | Basal Cell Carcinoma | Connective Tissue Disease | Eczema and Dermatitis | Hair | Laser Clinics | Nails | Not Otherwise Specified | Psoriasis | Vulval Skin Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Dermatology</td></tr>
+<tr><td>Clinic Types</td><td>Acne | Basal Cell Carcinoma | Connective Tissue Disease | Eczema and Dermatitis | Hair | Laser Clinics | Nails | Not Otherwise Specified | Psoriasis | Vulval Skin Disorders</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Diabetic Medicine (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Diabetic Medicine</td></tr>
+<tr><td>Clinic Types</td><td>General Diabetic Management | Type 1 Diabetes</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Diabetic Medicine</td></tr>
+<tr><td>Clinic Types</td><td>General Diabetic Management | Type 1 Diabetes</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Diagnostic Physiological Measurement (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Diagnostic Physiological Measurement</td></tr>
+<tr><td>Clinic Types</td><td>Audiology - Hearing Assess / Reassess</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Diagnostic Physiological Measurement</td></tr>
+<tr><td>Clinic Types</td><td>Audiology - Hearing Assess / Reassess</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Ear, Nose &amp; Throat (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Ear, Nose &amp; Throat</td></tr>
+<tr><td>Clinic Types</td><td>Ear | Nose / Sinus | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Ear, Nose &amp; Throat</td></tr>
+<tr><td>Clinic Types</td><td>Ear | Nose / Sinus | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Endocrinology and Metabolic Medicine (ESTH (unspecified site) / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Endocrinology and Metabolic Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Adrenal Disorders | Gynaecological Endocrinology | Not Otherwise Specified | Pituitary &amp; Hypothalamic</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Endocrinology and Metabolic Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Adrenal Disorders | Gynaecological Endocrinology | Not Otherwise Specified | Pituitary &amp; Hypothalamic</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">GI and Liver (Medicine and Surgery) (ESTH / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">ESTH</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>GI and Liver (Medicine and Surgery)</td></tr>
+<tr><td>Clinic Types</td><td>Hepatology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>GI and Liver (Medicine and Surgery)</td></tr>
+<tr><td>Clinic Types</td><td>Colorectal Surgery | Gallstones | Hepatology | Inflammatory Bowel Disease (IBD) | Lower GI (medical) excl IBD | Upper GI incl Dyspepsia</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>GI and Liver (Medicine and Surgery)</td></tr>
+<tr><td>Clinic Types</td><td>Colorectal Surgery | Gallstones | Hepatology | Inflammatory Bowel Disease (IBD) | Lower GI (medical) excl IBD | Upper GI incl Dyspepsia</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Geriatric Medicine (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">65+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Geriatric Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Falls | Movement Disorders | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>65+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">65+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Geriatric Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Falls | Movement Disorders | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>65+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Gynaecology (Epsom Hospital / Leatherhead / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Gynaecology</td></tr>
+<tr><td>Clinic Types</td><td>Menopause | Not Otherwise Specified | Recurrent Miscarriage | Urogynaecology / Prolapse</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Leatherhead</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+, Female only</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Gynaecology</td></tr>
+<tr><td>Clinic Types</td><td>Colposcopy | Infertility | Menopause | Menstrual Disorders | Not Otherwise Specified | Pelvic Pain | Pregnancy Advisory Service | Urogynaecology / Prolapse | Vulval and Perineal Lesions</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+, Female only</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+, Female only</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Gynaecology</td></tr>
+<tr><td>Clinic Types</td><td>Colposcopy | Infertility | Menopause | Menstrual Disorders | Not Otherwise Specified | Pelvic Pain | Pregnancy Advisory Service | Recurrent Miscarriage | Urogynaecology / Prolapse | Vulval and Perineal Lesions</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+, Female only</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Haematology (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Haematology</td></tr>
+<tr><td>Clinic Types</td><td>Anticoagulation | Clotting Disorders | Haemoglobinopathies &amp; Red Cell Disorders | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Haematology</td></tr>
+<tr><td>Clinic Types</td><td>Anticoagulation | Clotting Disorders | Haemoglobinopathies &amp; Red Cell Disorders | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Immunology (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Immunology</td></tr>
+<tr><td>Clinic Types</td><td>Autoimmune Disease | Immunodeficiency | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Immunology</td></tr>
+<tr><td>Clinic Types</td><td>Autoimmune Disease | Immunodeficiency | Not Otherwise Specified</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Nephrology (Aldershot / ESTH (unspecified site) / East Surrey / Epsom Hospital / Fleet / Frimley Park / Guildford / King Edward VII / Leatherhead / St Helier Hospital / St Peter's)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Aldershot</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">East Surrey</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Fleet</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Frimley Park</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Guildford</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">King Edward VII</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Leatherhead</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Hypertension | Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Peter's</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Nephrology</td></tr>
+<tr><td>Clinic Types</td><td>Nephrology</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Neurology (ESTH (unspecified site) / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Neurology</td></tr>
+<tr><td>Clinic Types</td><td>Epilepsy</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Neurology</td></tr>
+<tr><td>Clinic Types</td><td>Epilepsy</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Obstetrics (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+, Female only</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Obstetrics</td></tr>
+<tr><td>Clinic Types</td><td>Antenatal | Endocrine Pregnancy | Maternal Medicine | Maternal/Foetal Risk | Multiple Pregnancy</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+, Female only</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+, Female only</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Obstetrics</td></tr>
+<tr><td>Clinic Types</td><td>Antenatal | Endocrine Pregnancy | Maternal Medicine | Maternal/Foetal Risk | Multiple Pregnancy</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+, Female only</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Ophthalmology (ESTH (unspecified site) / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Ophthalmology</td></tr>
+<tr><td>Clinic Types</td><td>Cataract | Cornea | Diabetic Medical Retina | External Eye Disease | Glaucoma | Laser (YAG capsulotomy) | Low Vision | Not Otherwise Specified | Oculoplastics/Orbits/Lacrimal | Orthoptics | Other Medical Retina | Squint / Ocular Motility | Vitreoretinal</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Ophthalmology</td></tr>
+<tr><td>Clinic Types</td><td>Cataract | Cornea | Diabetic Medical Retina | External Eye Disease | Glaucoma | Laser (YAG capsulotomy) | Low Vision | Not Otherwise Specified | Oculoplastics/Orbits/Lacrimal | Orthoptics | Other Medical Retina | Squint / Ocular Motility | Vitreoretinal</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Orthopaedics (ESTH (unspecified site) / Epsom Hospital / Leatherhead / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Hand and Wrist | Hip | Knee | Shoulder and Elbow | Spine - Back Pain (not Scoliosis/Deform) | Spine - Neck Pain | Spine - Scoliosis and Deformity</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Leatherhead</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Hand and Wrist | Hip | Knee | Shoulder and Elbow | Spine - Back Pain (not Scoliosis/Deform) | Spine - Neck Pain | Spine - Scoliosis and Deformity</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthopaedics</td></tr>
+<tr><td>Clinic Types</td><td>Foot and Ankle | Hand and Wrist | Hip | Knee | Shoulder and Elbow | Spine - Back Pain (not Scoliosis/Deform) | Spine - Neck Pain | Spine - Scoliosis and Deformity</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Orthotics and Prosthetics (ESTH (unspecified site) / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthotics and Prosthetics</td></tr>
+<tr><td>Clinic Types</td><td>Orthotics</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Orthotics and Prosthetics</td></tr>
+<tr><td>Clinic Types</td><td>Orthotics</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Pain Management (Epsom Hospital / St Helier Hospital / Sutton)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Pain Management</td></tr>
+<tr><td>Clinic Types</td><td>Pain Management</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Pain Management</td></tr>
+<tr><td>Clinic Types</td><td>Pain Management</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Sutton</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-age">18+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Pain Management</td></tr>
+<tr><td>Clinic Types</td><td>Pain Management</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>18+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Physiotherapy (Epsom Hospital)</span>
+<span class="pg-badges">
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Physiotherapy</td></tr>
+<tr><td>Clinic Types</td><td>Threatened Limb</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>No</td></tr>
+<tr><td>Age / Criteria</td><td>nan</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Respiratory Medicine (Asthma / COPD Review / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Asthma</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Asthma | COPD</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">COPD Review</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Asthma | COPD</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Respiratory Medicine</td></tr>
+<tr><td>Clinic Types</td><td>Tuberculosis</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Rheumatology (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Rheumatology</td></tr>
+<tr><td>Clinic Types</td><td>Bone / Osteoporosis | Inflammatory Arthritis | Other Autoimmune Rheumatic Disease</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Rheumatology</td></tr>
+<tr><td>Clinic Types</td><td>Bone / Osteoporosis | Inflammatory Arthritis | Other Autoimmune Rheumatic Disease</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Surgery - Not Otherwise Specified (Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Not Otherwise Specified</td></tr>
+<tr><td>Clinic Types</td><td>Endocrine Surgery | Hernias | Lumps and Bumps</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Not Otherwise Specified</td></tr>
+<tr><td>Clinic Types</td><td>Endocrine Surgery | Hernias | Lumps and Bumps</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Surgery - Vascular (ESTH (unspecified site) / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Vascular</td></tr>
+<tr><td>Clinic Types</td><td>Arterial | Leg Ulcer | Lymphoedema | Varicose Veins</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-book">Bookable</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Surgery - Vascular</td></tr>
+<tr><td>Clinic Types</td><td>Arterial | Leg Ulcer | Lymphoedema | Varicose Veins</td></tr>
+<tr><td>Directly Bookable</td><td>Yes</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="provider-group">
+<div class="provider-group-header">
+<span class="pg-provider">ESTH</span>
+<span class="pg-name">Urology (ESTH (unspecified site) / Epsom Hospital / St Helier Hospital)</span>
+<span class="pg-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+</span>
+<span class="pg-services-preview"></span>
+<span class="pg-toggle"></span>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">Epsom</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+, Female only</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Urology</td></tr>
+<tr><td>Clinic Types</td><td>(In) Continence | Erectile Dysfunction/Andrology | Male Infertility | Not Otherwise Specified | Prostate | Urinary Calculus</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+, Female only</td></tr>
+</table>
+</div>
+</div>
+<div class="service-row">
+<div class="service-row-header">
+<span class="srv-name">St Helier</span>
+<span class="srv-badges">
+<span class="badge badge-ur">U&amp;R</span>
+<span class="badge badge-ras">RAS/CAS</span>
+<span class="badge badge-age">16+, Female only</span>
+</span>
+<span class="srv-toggle"></span>
+</div>
+<div class="service-body">
+<table class="ref-table">
+<tr><td>Specialty</td><td>Urology</td></tr>
+<tr><td>Clinic Types</td><td>(In) Continence | Erectile Dysfunction/Andrology | Male Infertility | Not Otherwise Specified | Prostate | Urinary Calculus</td></tr>
+<tr><td>Directly Bookable</td><td>No</td></tr>
+<tr><td>Advice &amp; Guidance</td><td>No</td></tr>
+<tr><td>RAS/CAS</td><td>Yes</td></tr>
+<tr><td>Age / Criteria</td><td>16+, Female only</td></tr>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Providers injected block end -->
+<script src="hybrid-loader.js"></script></body>
+</html>

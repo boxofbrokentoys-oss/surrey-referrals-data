@@ -1,0 +1,302 @@
+{
+  "specialty": "Rheumatology",
+  "conditions": {
+    "Rheumatology": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Rheumatology Service - RTK",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "iMSK RAS Triage service for Rheumatology",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Rheumatology Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "DHC",
+        "serviceName": "Rheumatology",
+        "sites": [
+          "Dorking",
+          "Holmhurst",
+          "Epsom Cottage",
+          "Elizabeth House"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Osteoporosis",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rheumatology-sth@nhs.net",
+        "phone": "0208 296 2473",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paed Rheumatology (St Helier - QMH)",
+        "sites": [
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Rheumatology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "rheumatology-sth@nhs.net",
+        "phone": "0208 296 2473",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Early Arthritis",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Rheumatology Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Rheumatology - OutpatientsFoundation Trust - RA2",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "General - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Osteoporosis -Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Rheumatology - Assessment Service (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "internal.referrals@stgeorges.nhs.uk",
+        "phone": "0208 725 0007",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "RAS Rheumatology Early Inflammatory Arthritis West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "RAS Rheumatology West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "ES: Refer via MSK Oxted Therapy clinic for triage. Exception: early inflammatory arthritis — send directly to SASH Rheumatology.",
+        "usc": false
+      }
+    ]
+  }
+}

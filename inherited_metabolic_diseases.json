@@ -1,0 +1,25 @@
+{
+  "specialty": "Inherited Metabolic Diseases",
+  "conditions": {
+    "Inherited Metabolic Diseases": [
+      {
+        "provider": "University College London Hospital (UCLH)",
+        "serviceName": "Adult Inherited Metabolic Diseases (RAS) - Charles Dent Metabolic Unit - NHNN - UCLH",
+        "sites": [
+          "UCLH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": 120,
+        "sex": "any",
+        "criteria": "18–120",
+        "email": "uclh.appointments@nhs.net",
+        "phone": "0203 448 4508",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

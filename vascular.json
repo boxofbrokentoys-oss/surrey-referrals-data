@@ -1,0 +1,432 @@
+{
+  "specialty": "Vascular",
+  "conditions": {
+    "Vascular": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Arterial Surgery",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Non-Diabetes Vascular Leg Ulcer Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Vascular Surgery Service - RTK / Vascular Surgery Service - RTK / Virtual Vascular Surgery Service-RT / Vascular Surgery Service",
+        "sites": [
+          "Ashford",
+          "St Peter's",
+          "Woking"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Virtual Vascular Surgery Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Lymphoedema Service",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CUH",
+        "serviceName": "Adult Vascular Surgery",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "CH-TR.eRS@nhs.net",
+        "phone": "020 8401 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Surgery Varicose Veins Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Vascular Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Vascular Surgery",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Vascular - General",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 7,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "7+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Hammersmith Hospital",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "Hammersmith Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Vascular Surgery Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Vascular Surgery (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Vascular Surgery-General (Kingston Consultants)",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Mary's Hospital",
+        "serviceName": "Adult general TRIAGE",
+        "sites": [
+          "St Mary's Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "St Mary's Hospital",
+        "serviceName": "Varicose vein TRIAGE",
+        "sites": [
+          "St Mary's Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "RAS Vascular Surgery West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Surgery - Vascular": [
+      {
+        "provider": "DHC",
+        "serviceName": "Surgery - Vascular",
+        "sites": [
+          "Dorking",
+          "Epsom Cottage"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "ESTH Vascular Referrals Returned from Croydon Hospital",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sthegh.generalsurgery@nhs.net",
+        "phone": "0208 296 3866",
+        "notes": "ESTH: do not select NOS — choose the specific clinic type (Arterial, Varicose Veins or Leg Ulcer).",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "ESTH Vascular Referrals Returned from Epsomedical",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sthegh.generalsurgery@nhs.net",
+        "phone": "0208 296 3866",
+        "notes": "ESTH: do not select NOS — choose the specific clinic type (Arterial, Varicose Veins or Leg Ulcer).",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Vascular",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sthegh.generalsurgery@nhs.net",
+        "phone": "0208 296 3866",
+        "notes": "ESTH: do not select NOS — choose the specific clinic type (Arterial, Varicose Veins or Leg Ulcer).",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Vascular Surgery (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.generalsurgeryadmin@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

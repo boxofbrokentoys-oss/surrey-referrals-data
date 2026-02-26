@@ -1,0 +1,44 @@
+{
+  "specialty": "Speech and Language Therapy",
+  "conditions": {
+    "Speech and Language Therapy": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Voice Therapy (including Transgender Voice)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 3,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "3+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "CSH SPA",
+        "serviceName": "csh.spareferrals@nhs.net",
+        "sites": [
+          "CSH SPA"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "csh.spareferrals@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

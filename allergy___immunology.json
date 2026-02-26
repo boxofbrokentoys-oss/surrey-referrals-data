@@ -1,0 +1,268 @@
+{
+  "specialty": "Allergy / Immunology",
+  "conditions": {
+    "Allergy": [
+      {
+        "provider": "ASPH",
+        "serviceName": "General Paediatrics CONSULTANT",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0 - 17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "General Paediatrics REGISTRAR (over 1)",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 1,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "1 - 17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Allergy 1 Stop",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0 - 17",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Allergy Clinic",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatrics Under 6 Months CONSULTANT",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 6,
+        "sex": "any",
+        "criteria": "0 - 6 months",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Allergy",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "immunology-sth@nhs.net",
+        "phone": "0208 296 4840",
+        "notes": "No adult allergy service at SASH. Main local options: ESTH, RSCH, Royal Sussex County Hospital (note: Royal Sussex waits exceed 1 year).",
+        "usc": false
+      },
+      {
+        "provider": "FPH (ASPH currently does not run this service)",
+        "serviceName": "Adult Allergy",
+        "sites": [
+          "FPH (ASPH currently does not run this service)"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "No adult allergy service at SASH. Main local options: ESTH, RSCH, Royal Sussex County Hospital (note: Royal Sussex waits exceed 1 year).",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Paediatric Allergy Service-Children's Outpatients",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0-17",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Adult Allergy - General - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": 120,
+        "sex": "any",
+        "criteria": "16-120",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH (ASPH currently does not run this service)",
+        "serviceName": "Adult Allergy - General - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": 120,
+        "sex": "any",
+        "criteria": "16–120",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "No adult allergy service at SASH. Main local options: ESTH, RSCH, Royal Sussex County Hospital (note: Royal Sussex waits exceed 1 year).",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Paediatric (All Specialties)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0-15",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Immunology": [
+      {
+        "provider": "ESTH",
+        "serviceName": "Immunology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "immunology-sth@nhs.net",
+        "phone": "0208 296 4840",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Clinical Immunology - Immunodeficiency Adult",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Adult Immunology - General - Outpatients",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": 120,
+        "sex": "any",
+        "criteria": "16–120",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

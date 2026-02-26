@@ -1,0 +1,25 @@
+{
+  "specialty": "Diabetic Nurse",
+  "conditions": {
+    "Diabetic Nurse": [
+      {
+        "provider": "KH",
+        "serviceName": "Diabetes Nurse Specialist Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

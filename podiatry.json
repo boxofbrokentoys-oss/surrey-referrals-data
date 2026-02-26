@@ -1,0 +1,175 @@
+{
+  "specialty": "Podiatry",
+  "conditions": {
+    "Orthotics": [
+      {
+        "provider": "ASPH",
+        "serviceName": "iMSK RAS Triage service for Orthopaedics",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FCHC",
+        "serviceName": "fchc.orthotics@nhs.net",
+        "sites": [
+          "FCHC"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "fchc.orthotics@nhs.net",
+        "phone": "nan",
+        "notes": "ES: Email referrals to FCHC — fchc.orthotics@nhs.net. Does not go via Oxted Therapy.",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Orthotics Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Podiatry": [
+      {
+        "provider": "ASPH",
+        "serviceName": "iMSK RAS Triage service for Orthopaedics",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "esth.podiatry-egh@nhs.net",
+        "sites": [
+          "Epsom"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "Surrey Downs",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "SD: Acute foot conditions (diabetic and non-diabetic) — St Helier threatened limb service. Diabetic non-healing ulcers: esth.podiatry-egh@nhs.net. Diabetic and non-diabetic: esth.podiatry-sth@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Podiatric Surgery (Foot & Ankle)",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588405",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "sash.diabeticfoot@nhs.net",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "sash.diabeticfoot@nhs.net",
+        "phone": "nan",
+        "notes": "ES: Multi-disciplinary high-risk foot team managed by SASH — email sash.diabeticfoot@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Podiatric Surgery Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Community Adult & Paeds Podiatry": [
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Podiatric Surgery (Foot & Ankle)",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 400",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

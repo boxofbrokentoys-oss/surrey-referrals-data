@@ -1,0 +1,1514 @@
+{
+  "specialty": "Ophthalmology",
+  "conditions": {
+    "Ophthalmology": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Adult Ophthalmology RAS",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ASPH",
+        "serviceName": "Paediatric Ophthalmology RAS",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Cataract NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "Contact lens dispensary: refer to Moorfields Eye Hospital.\nPaediatric ophthalmology: no orthoptics at ESH, QVH or DHC. Refer to ESTH, Moorfields Croydon or Kingston Hospital.",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Cataracts",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Ashtead Hospital",
+        "serviceName": "Ophthalmic Oculoplasty - NHS Clinic",
+        "sites": [
+          "Ashtead Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "RHC.AshteadNHSOutpatients@nhs.net",
+        "phone": "01372 221 421",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "DHC",
+        "serviceName": "Ophthalmology",
+        "sites": [
+          "Dorking"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 10,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "10+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "AMD - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "CUES - Urgent Ophthalmology Triage - Ophthalmology - Epsom & St Helier",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "CUES - Wet AMD (Urgent) Triage - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Cataracts - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Cornea - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "External Eye Disease /Cornea-Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Eye Lids - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Glaucoma - Ophthalmology",
+        "sites": [
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Minor Ops - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Ocular Motility-Neuro Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Retinal - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Uveitis - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Vitreo Retinal - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "YAG Laser - Ophthalmology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "est-tr.EyeUnitESTH@nhs.net",
+        "phone": "0208 296 3800",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Cataract Service - Ebbisham Clinics",
+        "sites": [
+          "Ebbisham Clinic"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": 99,
+        "sex": "any",
+        "criteria": "18–99",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 407",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "General Ophthalmology",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Glaucoma Service - Ebbisham Clinics",
+        "sites": [
+          "Ebbisham Clinic"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": 99,
+        "sex": "any",
+        "criteria": "18–99",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 407",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Adult Squint/Ocular Mot/Orthop",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Corneal",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Glaucoma Assessment",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Yag Laser",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Adult Motility Service-Ophthalmology",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Paediatric Ophthalmology Referral Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Adnexal (Oculoplastics/Orbital/Lacrimal) - Ophthalmology Moorfields at Croydon Hospital",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Cataract - Second Eye Cataract - Ophthalmology Moorfields at Croydon Hospital",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Cataract-Moorfields City Road",
+        "sites": [
+          "Moorfields (City Road Campus)"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.moorfieldscityroad@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Cataract-Moorfields at St George's",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Corneal - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "General Ophthalmology (Adult) - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "General Ophthalmology (Adult)-Moorfields at Ealing",
+        "sites": [
+          "Moorfields (Ealing Hospital)"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Glaucoma-Moorfields at St George's",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Keratoconus (EKC) - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Medical Retina - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Neuro-Ophthalmology - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Orthoptics (Adult) - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Strabismus (Adult)-Moorfields at St George's",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Uveitis & Inflammatory Disease - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Visual Aids & Rehabilitation - Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Visual Aids & Rehabilitation - Moorfields at St George's",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "Vitreoretinal-Moorfields at St George's",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Moorfields Eye Hospital NHS Foundation Trust",
+        "serviceName": "YAG Capsulotomy - Ophthalmology Moorfields at Croydon Hospital “ RP6",
+        "sites": [
+          "CUH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "meh-tr.croydonreferrals@nhs.net",
+        "phone": "0207 702 5544",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Not Otherwise Specified RAS - Royal Berkshire Hospital / Ophthalmology - Routine Not Otherwise Specified RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Cataract Service-Corneo Plastic Unit-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "qvh.corneoadmin@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Corneal Eye Disorder-Corneo Plastics Unit-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "qvh.corneoadmin@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Glaucoma Service-Corneo Plastics Unit - Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "qvh.corneoadmin@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Minor Ops (Exclusions Apply)-Corneo Plastic Unit-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 17,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "17+",
+        "email": "qvh.corneoadmin@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Oculoplastics Service-Corneo Plastics Unit-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "qvh.corneoadmin@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "YAG Capsulotomy -Queen Victoria Hospital RPC",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "qvh.corneoadmin@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Ophthalmology",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - Orthoptics",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "General - Eye Dept",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Squint & Motility-Orthoptics - Eye Dept - Cranleigh Hospital",
+        "sites": [
+          "Cranleigh"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Paediatric Ophthalmology",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0-15",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Spamedica",
+        "serviceName": "ADULT CATARACT ONE STOP CLINIC SPAMEDICA - CROYDON N1N0Y",
+        "sites": [
+          "Spamedica"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "spamedica.referrals@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Spamedica",
+        "serviceName": "ADULT Cataract & YAG Laser Ophthalmology Referral Assessment Service SPAMEDICA CROYDON N1N0Y",
+        "sites": [
+          "Spamedica"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "spamedica.referrals@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Spamedica",
+        "serviceName": "ADULT YAG Capsulotomy NHS CLINIC SPAMEDICA - CROYDON N1N0Y",
+        "sites": [
+          "Spamedica"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "spamedica.referrals@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Spamedica",
+        "serviceName": "Emergency/URGENT following post op - SPAMEDICA CROYDON N1N0Y",
+        "sites": [
+          "Spamedica"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "spamedica.referrals@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Cataract": [
+      {
+        "provider": "Chec Slough",
+        "serviceName": "ADULT CATARACT FAST TRACK SERVICE - CHEC SLOUGH",
+        "sites": [
+          "Chec Slough"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": 101,
+        "sex": "any",
+        "criteria": "18–101",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Cataract Service - Ebbisham Clinics",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Cataract Surgery - Cobham Day Surgery - NVM or Glaucoma Service",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "Cataract",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Cataract Service-Ophthalmology",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Cataract RAS - Royal Berkshire Hospital / Ophthalmology - Routine Cataract RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Ophthalmology (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Glaucoma": [
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Glaucoma Service - Ebbisham Clinics",
+        "sites": [
+          "CDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588 400",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Glaucoma Service-Ophthalmology",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Glaucoma RAS - Royal Berkshire Hospital / Ophthalmology - Routine Glaucoma RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Diabetic Medical Retina": [
+      {
+        "provider": "FPH",
+        "serviceName": "Retinal/Diabetic Eye Disease",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Diabetic Medical Retina RAS - Royal Berkshire Hospital / Ophthalmology - Routine Diabetic Medical Retina RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Oculoplastics/Orbits/Lacrimal": [
+      {
+        "provider": "FPH",
+        "serviceName": "Oculoplastics",
+        "sites": [
+          "FPH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "fhft.bookingcentrediv.medicine@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "Minor Ops Service-Ophthalmology",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Oculoplastics/Orbits/Lacrimal RAS - Royal Berkshire Hospital / Ophthalmology - Routine Oculoplastics/Orbits/Lacrimal RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Laser (YAG capsulotomy)": [
+      {
+        "provider": "KH",
+        "serviceName": "YAG Laser Service-Ophthalmology",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Cornea": [
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Cornea RAS - Royal Berkshire Hospital / Ophthalmology - Routine Cornea RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Other Medical Retina": [
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Other Medical Retina RAS - Royal Berkshire Hospital / Ophthalmology - Routine Other Medical Retina RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Vitreoretinal": [
+      {
+        "provider": "Prince Charles Eye",
+        "serviceName": "Ophthalmology - Urgent Vitreoretinal RAS - Royal Berkshire Hospital - / Ophthalmology - Routine Vitreoretinal RAS - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

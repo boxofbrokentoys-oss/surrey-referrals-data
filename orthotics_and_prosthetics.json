@@ -1,0 +1,26 @@
+{
+  "specialty": "Orthotics and Prosthetics",
+  "conditions": {
+    "Orthotics and Prosthetics": [
+      {
+        "provider": "ESTH",
+        "serviceName": "Foot & Ankle Orthotics",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.orthoticsservicesth@nhs.net",
+        "phone": "020 8296 2319",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

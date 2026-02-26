@@ -1,0 +1,80 @@
+{
+  "specialty": "Dietetics",
+  "conditions": {
+    "Dietetics": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Adult General Dietetic Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "NHS Digital Weight Management Programme: search by postcode ST4 on e-RS. ASPH - no weight management for overweight.",
+        "usc": false
+      },
+      {
+        "provider": "FCHC",
+        "serviceName": "fchc.firstdietitian@nhs.net",
+        "sites": [
+          "FCHC"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "fchc.firstdietitian@nhs.net",
+        "phone": "nan",
+        "notes": "ES: Email referrals to FCHC dietitians.",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "khft.dietetics@nhs.net",
+        "sites": [
+          "KH"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Elmbridge",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "khft.dietetics@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "EE: Email referrals to khft.dietetics@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Dietetics",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

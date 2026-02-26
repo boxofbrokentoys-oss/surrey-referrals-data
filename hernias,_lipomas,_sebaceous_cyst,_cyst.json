@@ -1,0 +1,45 @@
+{
+  "specialty": "Hernias, lipomas, sebaceous cyst, cyst",
+  "conditions": {
+    "Hernias, lipomas, sebaceous cyst, cyst": [
+      {
+        "provider": "ASPH",
+        "serviceName": "RTK / General Surgery",
+        "sites": [
+          "Ashford",
+          "Woking"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer or Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "Hernias, lipomas, sebaceous cyst, cyst removal",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "General Surgery / General Surgery",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

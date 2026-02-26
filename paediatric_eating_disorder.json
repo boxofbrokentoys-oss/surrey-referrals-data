@@ -1,0 +1,25 @@
+{
+  "specialty": "Paediatric Eating Disorder",
+  "conditions": {
+    "Paediatric Eating Disorder": [
+      {
+        "provider": "Mindworks",
+        "serviceName": "Mindworks Surrey - Paediatric Eating Disorder",
+        "sites": [
+          "Mindworks"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "[Refer via Riviam portal]",
+        "phone": "0300 222 5755",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

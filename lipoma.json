@@ -1,0 +1,26 @@
+{
+  "specialty": "Lipoma",
+  "conditions": {
+    "Lipoma": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Lipoma service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

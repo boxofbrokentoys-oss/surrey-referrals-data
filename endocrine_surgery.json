@@ -1,0 +1,79 @@
+{
+  "specialty": "Endocrine Surgery",
+  "conditions": {
+    "Endocrine Surgery": [
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Thyroid/parathyroid/endocrine surgery TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Chelsea & Westminster Hospital",
+        "serviceName": "RAS - Surgery Endocrine, Thyroid and Parathyroid Chelsea and Westminster Hospital RQM01",
+        "sites": [
+          "Chelsea & Westminster Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "chelwest.gpreferrals@nhs.net",
+        "phone": "0203 315 6666",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Hammersmith Hospital",
+        "serviceName": "Thyroid/parathyroid/endocrine surgery TRIAGE",
+        "sites": [
+          "Hammersmith Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "University College London Hospital (UCLH)",
+        "serviceName": "Endocrine Surgery Service (RAS) - General Surgery Dept - UCLH",
+        "sites": [
+          "UCLH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 17,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "17+",
+        "email": "uclh.appointments@nhs.net",
+        "phone": "0203 448 4508",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

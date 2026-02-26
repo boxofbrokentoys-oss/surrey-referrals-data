@@ -1,0 +1,116 @@
+{
+  "specialty": "General Medicine",
+  "conditions": {
+    "General Medicine": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Medical Examiners Office",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "DHC",
+        "serviceName": "General Medicine",
+        "sites": [
+          "Dorking"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "GSST",
+        "serviceName": "General Medicine - Guy's & St Thomas' Hospital",
+        "sites": [
+          "Guy's & St Thomas'"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "Toxicology clinic available at Guy's and St Thomas' — refer under General Medicine.",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "General Internal Medicine (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": 75,
+        "sex": "any",
+        "criteria": "18–75",
+        "email": "sash.outpatientreferrals@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "TEL Clinical Pharmacology & Polypharmacy Clinic",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "stgh-tr.opd.e-referrals@nhs.net",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "Refer under General Medicine at SGH, or search for Dr Emma Baker's clinics on e-RS.",
+        "usc": false
+      }
+    ]
+  }
+}

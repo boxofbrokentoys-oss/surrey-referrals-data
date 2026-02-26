@@ -1,0 +1,25 @@
+{
+  "specialty": "Diagnostic Imaging",
+  "conditions": {
+    "Diagnostic Imaging": [
+      {
+        "provider": "Epsomedical",
+        "serviceName": "Direct access - Ultrasound / TV Ultrasound - Epsom Day Surgery",
+        "sites": [
+          "EDSU"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 18,
+        "ageMax": 99,
+        "sex": "any",
+        "criteria": "18–99",
+        "email": "epsomedical.referrals@nhs.net",
+        "phone": "01932 588400",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

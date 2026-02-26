@@ -1,0 +1,597 @@
+{
+  "specialty": "ENT",
+  "conditions": {
+    "Audiology - Tinnitus": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Audiology Tinnitus Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's",
+          "Woking"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "Hearing loss that is\n- Sudden onset (≤ 7 days) hearing loss or deterioration in hearing (refer to urgent ENT clinic)\n- Rapidly progressive (≤ 90 days) hearing loss or deterioration of hearing\n\nTinnitus that is:\n- pulsatile\n- causing acute suicidal ideation, psychological crisis or speech hallucinations\n\nOtoscopic abnormalities\n- Ear discharge other than wax from either ear (in the 90 days prior to assessment)\n- Complete or partial obstruction of the ear canal preventing examination of the tympanic membrane.\n- Abnormal appearance of the ear canal or tympanic membrane\n- Tympanic membrane perforation that has not been previously assessed in ENT.\n\nAbnormal auditory perceptions (dysacusis or distortion of hearing)\n\nDizziness, vertigo, or other unexplained neurological symptoms\n- Otalgia affecting either ear (earache > 7 days, in the 90 days prior to assessment)",
+        "usc": false
+      }
+    ],
+    "Dentistry and Orthodontics": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Orthodontics Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 5,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "5+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "QVH",
+        "serviceName": "Orthodontics Service-Maxillofacial Unit-Queen Victoria Hospital",
+        "sites": [
+          "QVH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "All",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "tqv-tr.referrals@nhs.net",
+        "phone": "01342 414000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Dentistry & Orthodontics (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "dentalmaxillofacial.sash@nhs.net",
+        "phone": "01737 768 511",
+        "notes": "Must be sent by the patient's own dentist. Patients with complex needs can be referred via e-RS to the Specialist Dentistry clinic at East Surrey.",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Orthodontics - Orthodontic Department",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "Maxfax.DentalEnquiries@stgeorges.nhs.uk",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "ENT": [
+      {
+        "provider": "ASPH",
+        "serviceName": "ENT Referral Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "A&G Only Service - For referrals please refer into the SWL ENT SPOR DOS.",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "ESTH",
+        "serviceName": "Paediatric ENT - A&G Only Service - For referrals please refer into the SWL ENT SPOR DOS.",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "0208 296 2968",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Gilbert House",
+        "serviceName": "syheartlandsicb.microsuction.ashlea@nhs.net",
+        "sites": [
+          "Gilbert House"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "Surrey Downs",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "syheartlandsicb.microsuction.ashlea@nhs.net",
+        "phone": "nan",
+        "notes": "SD: Gilbert House microsuction clinic — email syheartlandsicb.microsuction.ashlea@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "SWL ENT Single Point of Referral",
+        "sites": [
+          "KH",
+          "Epsom",
+          "St Helier",
+          "St George's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "All",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "SWL Paediatric ENT Single Point of Referral",
+        "sites": [
+          "KH",
+          "Epsom",
+          "St Helier",
+          "St George's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "All",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - ENT - ENT Dept",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - ENT - ENT Dept - Cranleigh Village Hospital",
+        "sites": [
+          "Cranleigh"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 4,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "4-15",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "ENT Assessment Service - Audiology, Balance, Otology & Tinnitus",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 1,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "1+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "General - Outpatients - Haslemere Hospital",
+        "sites": [
+          "Haslemere"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "General/Rhinology - Outpatients - Cranleigh Hospital",
+        "sites": [
+          "Cranleigh"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Specialist Ear/Otology - Advice and Guidance only",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Dentistry & Orthodontics (Paediatrics)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0-15",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Ear, Nose & Throat (Adult)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "sash.ent.secretaries@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "SASH",
+        "serviceName": "Ear, Nose & Throat (Paediatrics)",
+        "sites": [
+          "East Surrey Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0-15",
+        "email": "sash.outpatientbooking@nhs.net",
+        "phone": "01737 784 000",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "SOS/Urgent Service Assessment (CAS)",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 4,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "4+",
+        "email": "stgh-tr.opd.e-referrals@nhs.net",
+        "phone": "0208 725 0007",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Emergency ENT": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.entadminteam@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "ENT-SOS/Emergency Service",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 4,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "4+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "rsch.opd.emergencyent@nhs.net",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Eye Casualty (urgent)": [
+      {
+        "provider": "ASPH",
+        "serviceName": "asp-tr.eye.casualty.referrals@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "FPH",
+        "serviceName": "fph-tr.eyecasualtyfrimley@nhs.net",
+        "sites": [
+          "FPH"
+        ],
+        "method": "Email",
+        "rasType": "Email",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "fph-tr.eyecasualtyfrimley@nhs.net",
+        "phone": "0300 614 5000",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Children's & Adolescent Services": [
+      {
+        "provider": "DHC",
+        "serviceName": "Children's & Adolescent Services – Paediatrics",
+        "sites": [
+          "Holmhurst"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": 15,
+        "sex": "any",
+        "criteria": "0-15",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Ear, Nose & Throat": [
+      {
+        "provider": "DHC",
+        "serviceName": "Ear, Nose & Throat – ENT",
+        "sites": [
+          "Dorking"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 3,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "3+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Paediatric Gender Identity Clinic": [
+      {
+        "provider": "Mindworks",
+        "serviceName": "Mindworks Surrey - Paediatric Gender Identity Clinic",
+        "sites": [
+          "Mindworks"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "5 years 10 months - 18",
+        "email": "[Refer via Riviam portal]",
+        "phone": "0300 222 5755",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Paediatric Mental & ASD/ADHD": [
+      {
+        "provider": "Mindworks",
+        "serviceName": "Mindworks Surrey - Paediatric ASD/ADHD",
+        "sites": [
+          "Mindworks"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "5 years 10 months - 18",
+        "email": "[Refer via Riviam portal]",
+        "phone": "0300 222 5755",
+        "notes": "nan",
+        "usc": false
+      }
+    ],
+    "Ear de-wax clinic": [
+      {
+        "provider": "RSCH",
+        "serviceName": "De-Wax Clinic (Aural Care) - ENT Dept",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

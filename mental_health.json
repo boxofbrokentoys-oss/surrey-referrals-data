@@ -1,0 +1,133 @@
+{
+  "specialty": "Mental Health",
+  "conditions": {
+    "Adult Mental Health": [
+      {
+        "provider": "Care ADHD",
+        "serviceName": "ADHD - Care ADHD",
+        "sites": [
+          "Care ADHD"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "SWL ENT single point of referral: refer to Kingston Hospital — triaged and booked to KH, ESTH, SGH or CUH as appropriate.\nTonsillitis: ensure TNRF (Tonsil Referral Criteria) criteria are met before referring.",
+        "usc": false
+      },
+      {
+        "provider": "Harrow Health",
+        "serviceName": "Harrow Health Adult ADHD",
+        "sites": [
+          "Harrow Health"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Health Harmonie",
+        "serviceName": "HealthHarmonie Minds - Adult ADHD/Autism Service",
+        "sites": [
+          "Health Harmonie"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Perinatal at Kingston",
+        "serviceName": "KingstonSPA-PCLSDuty@swlstg.nhs.uk",
+        "sites": [
+          "Perinatal at Kingston"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Perinatal at SABP",
+        "serviceName": "perinatal@sabp.nhs.uk",
+        "sites": [
+          "Perinatal at SABP"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "18+",
+        "email": "perinatal@sabp.nhs.uk",
+        "phone": "0300 5555 222",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Surrey & Borders",
+        "serviceName": "SABP (Surrey and Borders Partnership) Single Point of Access - Adult Mental Health (RXXY7)",
+        "sites": [
+          "SABP"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": 64,
+        "sex": "any",
+        "criteria": "18–64",
+        "email": "spa@sabp.nhs.uk",
+        "phone": "0300 5555 222",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Surrey & Borders",
+        "serviceName": "spa@sabp.nhs.uk",
+        "sites": [
+          "SABP"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "spa@sabp.nhs.uk",
+        "phone": "0300 5555 222",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

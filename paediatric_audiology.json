@@ -1,0 +1,79 @@
+{
+  "specialty": "Paediatric Audiology",
+  "conditions": {
+    "Paediatric Audiology": [
+      {
+        "provider": "KH",
+        "serviceName": "Paediatric Hearing Assessment Service-Audiology-Surbiton Health Centre Site",
+        "sites": [
+          "Surbiton Health Centre"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 16,
+        "sex": "any",
+        "criteria": "0-16",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "KH",
+        "serviceName": "khft.paediatricaudiology@nhs.net",
+        "sites": [
+          "KH"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 17,
+        "sex": "any",
+        "criteria": "0–17",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "EE: Paediatric physio — KH via e-RS under Paediatrics/Orthopaedics.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Children & Adolescent - AudiologyRA2",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 5,
+        "ageMax": 18,
+        "sex": "any",
+        "criteria": "5–18",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "rsc-tr.audiology@nhs.net",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": 6,
+        "sex": "any",
+        "criteria": "0-6",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "G&W: Paediatric physio — RSCH via e-RS under Physiotherapy/MSK.",
+        "usc": false
+      }
+    ]
+  }
+}

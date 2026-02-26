@@ -1,0 +1,61 @@
+{
+  "specialty": "Neurosurgery",
+  "conditions": {
+    "Neurosurgery": [
+      {
+        "provider": "DHC",
+        "serviceName": "Neurosurgery – MSK incl. Pain Management",
+        "sites": [
+          "Holmhurst"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "East Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Neurosurgery - General Assessment Service",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "NeurosciencesBookingTeam@stgeorges.nhs.uk",
+        "phone": "0208 725 4321",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "STGH",
+        "serviceName": "Neurosurgery - Paeds Scoliosis Assessment",
+        "sites": [
+          "STGH"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "Under 16",
+        "email": "NeurosciencesBookingTeam@stgeorges.nhs.uk",
+        "phone": "0208 725 4321",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "specialty": "Pacemaker Clinic",
+  "conditions": {
+    "Pacemaker Clinic": [
+      {
+        "provider": "ASPH",
+        "serviceName": "rowena.lyth@nhs.net",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

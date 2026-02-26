@@ -1,0 +1,26 @@
+{
+  "specialty": "Chemical Pathology",
+  "conditions": {
+    "Chemical Pathology": [
+      {
+        "provider": "ESTH",
+        "serviceName": "Chemical Pathology",
+        "sites": [
+          "Epsom",
+          "St Helier"
+        ],
+        "method": "E-RS",
+        "rasType": "CAS",
+        "region": "East Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "esth.obcmgrs@nhs.net",
+        "phone": "01372 735 984",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

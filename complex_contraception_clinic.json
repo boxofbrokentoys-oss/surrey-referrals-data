@@ -1,0 +1,25 @@
+{
+  "specialty": "Complex Contraception Clinic",
+  "conditions": {
+    "Complex Contraception Clinic": [
+      {
+        "provider": "Surrey Sexual Health",
+        "serviceName": "cnw-tr.surreysexualhealthreferrals@nhs.net",
+        "sites": [
+          "Surrey Sexual Health"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": 55,
+        "sex": "any",
+        "criteria": "16-55",
+        "email": "cnw-tr.surreysexualhealthreferrals@nhs.net",
+        "phone": "nan",
+        "notes": "No GA or sedation",
+        "usc": false
+      }
+    ]
+  }
+}

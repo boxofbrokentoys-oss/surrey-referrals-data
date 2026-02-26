@@ -1,0 +1,25 @@
+{
+  "specialty": "Lymphoedema",
+  "conditions": {
+    "Lymphoedema": [
+      {
+        "provider": "RSCH",
+        "serviceName": "rsch.gw.lymphoedema@nhs.net",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "ES: Lymphoedema — local service at SASH, refer via e-RS under Vascular/NOS.",
+        "usc": false
+      }
+    ]
+  }
+}

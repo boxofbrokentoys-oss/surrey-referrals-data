@@ -1,0 +1,61 @@
+{
+  "specialty": "Vasectomy",
+  "conditions": {
+    "Vasectomy": [
+      {
+        "provider": "Greystone House Surgery",
+        "serviceName": "greystonepost@nhs.net",
+        "sites": [
+          "Greystone House Surgery"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "East Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "greystonepost@nhs.net",
+        "phone": "nan",
+        "notes": "ES: Local NHS contract — email greystonepost@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "Littleton Surgery",
+        "serviceName": "syheartlandsicb.vas.littletonsurgery@nhs.net",
+        "sites": [
+          "Littleton Surgery"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "Surrey Downs",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "syheartlandsicb.vas.littletonsurgery@nhs.net",
+        "phone": "nan",
+        "notes": "SD: Local contract with Littleton Surgery — email syheartlandsicb.vas.littletonsurgery@nhs.net.",
+        "usc": false
+      },
+      {
+        "provider": "Marie Stopes",
+        "serviceName": "sterilisations.msuk@nhs.net",
+        "sites": [
+          "Marie Stopes"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "sterilisations.msuk@nhs.net",
+        "phone": "0345 300 0212",
+        "notes": "SD/G&W: Marie Stopes clinic — email sterilisations.msuk@nhs.net.",
+        "usc": false
+      }
+    ]
+  }
+}

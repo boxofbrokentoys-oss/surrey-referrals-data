@@ -1,0 +1,26 @@
+{
+  "specialty": "Hysteroscopy",
+  "conditions": {
+    "Hysteroscopy": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Hysteroscopy Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 18,
+        "ageMax": null,
+        "sex": "female",
+        "criteria": "18+, Female only",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

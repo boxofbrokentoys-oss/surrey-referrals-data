@@ -1,0 +1,26 @@
+{
+  "specialty": "Rapid Response (including falls Clinic)",
+  "conditions": {
+    "Rapid Response (including falls Clinic)": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Geriatric Medicine Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 65,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "65+",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

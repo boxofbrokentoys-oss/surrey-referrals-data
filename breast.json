@@ -1,0 +1,116 @@
+{
+  "specialty": "Breast",
+  "conditions": {
+    "Breast clinic": [
+      {
+        "provider": "ASPH",
+        "serviceName": "Breast Surgery Referral Assessment Service",
+        "sites": [
+          "Ashford",
+          "St Peter's"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 0,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "All ages",
+        "email": "asp-tr.gpappointments@nhs.net",
+        "phone": "01784 884 351",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "King Edward VII Hospital, Windsor",
+        "serviceName": "Breast - Routine",
+        "sites": [
+          "King Edward VII Hospital, Windsor"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 8,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "8+",
+        "email": "nan",
+        "phone": "0300 614 1510",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "RMH",
+        "serviceName": "Referral Assesment Service - Family History Service (Risk of Breast Cancer) - Sutton",
+        "sites": [
+          "RMH (Sutton)"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 38,
+        "ageMax": 60,
+        "sex": "any",
+        "criteria": "38–60",
+        "email": "rmh-tr.referrals@nhs.net",
+        "phone": "0800 731 2325",
+        "notes": "RMH Sutton clinic found on e-RS under 2WW/Breast — covers routine, urgent and USC referrals.",
+        "usc": false
+      },
+      {
+        "provider": "RSCH",
+        "serviceName": "Breast Surgery - Family History service",
+        "sites": [
+          "Guildford"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 20,
+        "ageMax": 65,
+        "sex": "any",
+        "criteria": "20–65",
+        "email": "rsc-tr.opdapptcentre@nhs.net",
+        "phone": "01483 464 002",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "Royal Berkshire Hospital",
+        "serviceName": "RBFT - Breast - Routine - Male - Royal Berkshire Hospital",
+        "sites": [
+          "Royal Berkshire Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "male",
+        "criteria": "16+, Male only",
+        "email": "nan",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      },
+      {
+        "provider": "West Middlesex University Hospital",
+        "serviceName": "Breast Symptomatic West Middlesex Hospital RQM91",
+        "sites": [
+          "West Middlesex University Hospital"
+        ],
+        "method": "E-RS",
+        "rasType": "Defer",
+        "region": "NW Surrey",
+        "ageMin": 15,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "15+",
+        "email": "caw-tr.westmidadmin14@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

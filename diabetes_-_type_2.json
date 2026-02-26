@@ -1,0 +1,25 @@
+{
+  "specialty": "Diabetes - Type 2",
+  "conditions": {
+    "Diabetes - Type 2": [
+      {
+        "provider": "Charing Cross",
+        "serviceName": "Type 2 diabetes TRIAGE",
+        "sites": [
+          "Charing Cross"
+        ],
+        "method": "E-RS",
+        "rasType": "RAS",
+        "region": "NW Surrey",
+        "ageMin": 16,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "16+",
+        "email": "ICHC-tr.imperialreferrals@nhs.net",
+        "phone": "0203 311 3000",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}

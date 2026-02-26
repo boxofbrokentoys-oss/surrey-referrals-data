@@ -1,0 +1,43 @@
+{
+  "specialty": "Spirometry & FeNo",
+  "conditions": {
+    "Spirometry & FeNo": [
+      {
+        "provider": "KH",
+        "serviceName": "khn-tr.opreferrals@nhs.net",
+        "sites": [
+          "KH"
+        ],
+        "method": "E-RS",
+        "rasType": "Bookable",
+        "region": "East Elmbridge",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "khn-tr.opreferrals@nhs.net",
+        "phone": "0208 546 7711",
+        "notes": "EE: Kingston Hospital spirometry — refer via e-RS under Respiratory.",
+        "usc": false
+      },
+      {
+        "provider": "NICS",
+        "serviceName": "nics.respiratory@nhs.net",
+        "sites": [
+          "NICS"
+        ],
+        "method": "Email",
+        "rasType": "nan",
+        "region": "NW Surrey",
+        "ageMin": null,
+        "ageMax": null,
+        "sex": "any",
+        "criteria": "nan",
+        "email": "nics.directreferralpolypectomy@nhs.net",
+        "phone": "nan",
+        "notes": "nan",
+        "usc": false
+      }
+    ]
+  }
+}
